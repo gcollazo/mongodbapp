@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D25A7E81A697586007EC13C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A7E71A697586007EC13C /* AppDelegate.swift */; };
+		7D25A7EA1A697586007EC13C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A7E91A697586007EC13C /* Images.xcassets */; };
+		7D25A7ED1A697586007EC13C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A7EB1A697586007EC13C /* MainMenu.xib */; };
+		7D25A7F91A697586007EC13C /* MongoDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A7F81A697586007EC13C /* MongoDBTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D25A7F31A697586007EC13C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D25A7DA1A697586007EC13C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D25A7E11A697586007EC13C;
+			remoteInfo = MongoDB;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7D25A7E21A697586007EC13C /* MongoDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MongoDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D25A7E61A697586007EC13C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D25A7E71A697586007EC13C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7D25A7E91A697586007EC13C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7D25A7EC1A697586007EC13C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7D25A7F21A697586007EC13C /* MongoDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MongoDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D25A7F71A697586007EC13C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D25A7F81A697586007EC13C /* MongoDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDBTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D25A7DF1A697586007EC13C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D25A7EF1A697586007EC13C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D25A7D91A697586007EC13C = {
+			isa = PBXGroup;
+			children = (
+				7D25A7E41A697586007EC13C /* MongoDB */,
+				7D25A7F51A697586007EC13C /* MongoDBTests */,
+				7D25A7E31A697586007EC13C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D25A7E31A697586007EC13C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D25A7E21A697586007EC13C /* MongoDB.app */,
+				7D25A7F21A697586007EC13C /* MongoDBTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D25A7E41A697586007EC13C /* MongoDB */ = {
+			isa = PBXGroup;
+			children = (
+				7D25A7E71A697586007EC13C /* AppDelegate.swift */,
+				7D25A7E91A697586007EC13C /* Images.xcassets */,
+				7D25A7EB1A697586007EC13C /* MainMenu.xib */,
+				7D25A7E51A697586007EC13C /* Supporting Files */,
+			);
+			path = MongoDB;
+			sourceTree = "<group>";
+		};
+		7D25A7E51A697586007EC13C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D25A7E61A697586007EC13C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D25A7F51A697586007EC13C /* MongoDBTests */ = {
+			isa = PBXGroup;
+			children = (
+				7D25A7F81A697586007EC13C /* MongoDBTests.swift */,
+				7D25A7F61A697586007EC13C /* Supporting Files */,
+			);
+			path = MongoDBTests;
+			sourceTree = "<group>";
+		};
+		7D25A7F61A697586007EC13C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D25A7F71A697586007EC13C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D25A7E11A697586007EC13C /* MongoDB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D25A7FC1A697586007EC13C /* Build configuration list for PBXNativeTarget "MongoDB" */;
+			buildPhases = (
+				7D25A7DE1A697586007EC13C /* Sources */,
+				7D25A7DF1A697586007EC13C /* Frameworks */,
+				7D25A7E01A697586007EC13C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MongoDB;
+			productName = MongoDB;
+			productReference = 7D25A7E21A697586007EC13C /* MongoDB.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7D25A7F11A697586007EC13C /* MongoDBTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D25A7FF1A697586007EC13C /* Build configuration list for PBXNativeTarget "MongoDBTests" */;
+			buildPhases = (
+				7D25A7EE1A697586007EC13C /* Sources */,
+				7D25A7EF1A697586007EC13C /* Frameworks */,
+				7D25A7F01A697586007EC13C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D25A7F41A697586007EC13C /* PBXTargetDependency */,
+			);
+			name = MongoDBTests;
+			productName = MongoDBTests;
+			productReference = 7D25A7F21A697586007EC13C /* MongoDBTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D25A7DA1A697586007EC13C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Giovanni Collazo";
+				TargetAttributes = {
+					7D25A7E11A697586007EC13C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					7D25A7F11A697586007EC13C = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 7D25A7E11A697586007EC13C;
+					};
+				};
+			};
+			buildConfigurationList = 7D25A7DD1A697586007EC13C /* Build configuration list for PBXProject "MongoDB" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7D25A7D91A697586007EC13C;
+			productRefGroup = 7D25A7E31A697586007EC13C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D25A7E11A697586007EC13C /* MongoDB */,
+				7D25A7F11A697586007EC13C /* MongoDBTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D25A7E01A697586007EC13C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D25A7EA1A697586007EC13C /* Images.xcassets in Resources */,
+				7D25A7ED1A697586007EC13C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D25A7F01A697586007EC13C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D25A7DE1A697586007EC13C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D25A7E81A697586007EC13C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D25A7EE1A697586007EC13C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D25A7F91A697586007EC13C /* MongoDBTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D25A7F41A697586007EC13C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D25A7E11A697586007EC13C /* MongoDB */;
+			targetProxy = 7D25A7F31A697586007EC13C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7D25A7EB1A697586007EC13C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D25A7EC1A697586007EC13C /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7D25A7FA1A697586007EC13C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7D25A7FB1A697586007EC13C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7D25A7FD1A697586007EC13C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MongoDB/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7D25A7FE1A697586007EC13C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MongoDB/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7D25A8001A697586007EC13C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MongoDBTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MongoDB.app/Contents/MacOS/MongoDB";
+			};
+			name = Debug;
+		};
+		7D25A8011A697586007EC13C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MongoDBTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MongoDB.app/Contents/MacOS/MongoDB";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D25A7DD1A697586007EC13C /* Build configuration list for PBXProject "MongoDB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D25A7FA1A697586007EC13C /* Debug */,
+				7D25A7FB1A697586007EC13C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D25A7FC1A697586007EC13C /* Build configuration list for PBXNativeTarget "MongoDB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D25A7FD1A697586007EC13C /* Debug */,
+				7D25A7FE1A697586007EC13C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7D25A7FF1A697586007EC13C /* Build configuration list for PBXNativeTarget "MongoDBTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D25A8001A697586007EC13C /* Debug */,
+				7D25A8011A697586007EC13C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D25A7DA1A697586007EC13C /* Project object */;
+}
