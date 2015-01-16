@@ -497,6 +497,7 @@
 				7D25A7FE1A697586007EC13C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D25A7FF1A697586007EC13C /* Build configuration list for PBXNativeTarget "MongoDBTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +506,7 @@
 				7D25A8011A697586007EC13C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

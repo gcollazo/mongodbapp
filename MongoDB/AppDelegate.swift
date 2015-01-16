@@ -55,9 +55,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.pipe = NSPipe()
         self.file = self.pipe.fileHandleForReading
         
-        let bundlePath = NSBundle.mainBundle().bundlePath
-        let path = "\(bundlePath)/Contents/Resources/mongod"
-        self.task.launchPath = path
+        if let path = NSBundle.mainBundle().pathForResource("mongod", ofType: "") {
+            self.task.launchPath = path
+        }
+        
         self.task.arguments = ["--dbpath", self.dataPath]
         self.task.standardOutput = self.pipe
         
