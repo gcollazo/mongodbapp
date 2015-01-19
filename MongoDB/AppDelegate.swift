@@ -55,7 +55,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.pipe = NSPipe()
         self.file = self.pipe.fileHandleForReading
         
-        if let path = NSBundle.mainBundle().pathForResource("mongod", ofType: "") {
+        if let path = NSBundle.mainBundle().pathForResource("mongod", ofType: "", inDirectory: "Vendor/mongodb"){
             self.task.launchPath = path
         }
         

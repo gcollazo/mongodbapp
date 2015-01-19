@@ -11,24 +11,24 @@
 		7D25A7EA1A697586007EC13C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A7E91A697586007EC13C /* Images.xcassets */; };
 		7D25A7ED1A697586007EC13C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A7EB1A697586007EC13C /* MainMenu.xib */; };
 		7D25A7F91A697586007EC13C /* MongoDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A7F81A697586007EC13C /* MongoDBTests.swift */; };
-		7D25A8031A6975FF007EC13C /* leaf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A8021A6975FF007EC13C /* leaf.pdf */; };
-		7D25A8261A6976D8007EC13C /* bsondump in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A8151A6976D8007EC13C /* bsondump */; };
-		7D25A8271A6976D8007EC13C /* mongo in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A8161A6976D8007EC13C /* mongo */; };
-		7D25A8281A6976D8007EC13C /* mongod in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A8171A6976D8007EC13C /* mongod */; };
-		7D25A8291A6976D8007EC13C /* mongodump in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A8181A6976D8007EC13C /* mongodump */; };
-		7D25A82A1A6976D8007EC13C /* mongoexport in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A8191A6976D8007EC13C /* mongoexport */; };
-		7D25A82B1A6976D8007EC13C /* mongofiles in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A81A1A6976D8007EC13C /* mongofiles */; };
-		7D25A82C1A6976D8007EC13C /* mongoimport in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A81B1A6976D8007EC13C /* mongoimport */; };
-		7D25A82D1A6976D8007EC13C /* mongooplog in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A81C1A6976D8007EC13C /* mongooplog */; };
-		7D25A82E1A6976D8007EC13C /* mongoperf in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A81D1A6976D8007EC13C /* mongoperf */; };
-		7D25A82F1A6976D8007EC13C /* mongorestore in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A81E1A6976D8007EC13C /* mongorestore */; };
-		7D25A8301A6976D8007EC13C /* mongos in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A81F1A6976D8007EC13C /* mongos */; };
-		7D25A8311A6976D8007EC13C /* mongosniff in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A8201A6976D8007EC13C /* mongosniff */; };
-		7D25A8321A6976D8007EC13C /* mongostat in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A8211A6976D8007EC13C /* mongostat */; };
-		7D25A8331A6976D8007EC13C /* mongotop in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A8221A6976D8007EC13C /* mongotop */; };
-		7D25A8341A6976D8007EC13C /* GNU-AGPL-3.0 in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A8231A6976D8007EC13C /* GNU-AGPL-3.0 */; };
-		7D25A8351A6976D8007EC13C /* README in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A8241A6976D8007EC13C /* README */; };
-		7D25A8361A6976D8007EC13C /* THIRD-PARTY-NOTICES in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A8251A6976D8007EC13C /* THIRD-PARTY-NOTICES */; };
+		7D2D18281A6D288800B2DD6A /* bsondump in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18061A6D278300B2DD6A /* bsondump */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D18291A6D288800B2DD6A /* mongo in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18071A6D278300B2DD6A /* mongo */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D182A1A6D288800B2DD6A /* mongod in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18081A6D278300B2DD6A /* mongod */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D182B1A6D288800B2DD6A /* mongodump in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18091A6D278300B2DD6A /* mongodump */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D182C1A6D288800B2DD6A /* mongoexport in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180A1A6D278300B2DD6A /* mongoexport */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D182D1A6D288800B2DD6A /* mongofiles in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180B1A6D278300B2DD6A /* mongofiles */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D182E1A6D288800B2DD6A /* mongoimport in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180C1A6D278300B2DD6A /* mongoimport */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D182F1A6D288800B2DD6A /* mongooplog in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180D1A6D278300B2DD6A /* mongooplog */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D18301A6D288800B2DD6A /* mongoperf in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180E1A6D278300B2DD6A /* mongoperf */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D18311A6D288800B2DD6A /* mongorestore in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180F1A6D278300B2DD6A /* mongorestore */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D18321A6D288800B2DD6A /* mongos in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18101A6D278300B2DD6A /* mongos */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D18331A6D288800B2DD6A /* mongosniff in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18111A6D278300B2DD6A /* mongosniff */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D18341A6D288800B2DD6A /* mongostat in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18121A6D278300B2DD6A /* mongostat */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D18351A6D288800B2DD6A /* mongotop in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18131A6D278300B2DD6A /* mongotop */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7D2D18361A6D288800B2DD6A /* GNU-AGPL-3.0 in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18141A6D278300B2DD6A /* GNU-AGPL-3.0 */; };
+		7D2D18371A6D288800B2DD6A /* README in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18151A6D278300B2DD6A /* README */; };
+		7D2D18381A6D288800B2DD6A /* THIRD-PARTY-NOTICES in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18161A6D278300B2DD6A /* THIRD-PARTY-NOTICES */; };
+		7D2D183A1A6D2A4100B2DD6A /* leaf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7D2D18391A6D2A4100B2DD6A /* leaf.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +41,36 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7D2D18021A6D270400B2DD6A /* Copy Files: Vendor/mongodb */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Vendor/mongodb;
+			dstSubfolderSpec = 7;
+			files = (
+				7D2D18281A6D288800B2DD6A /* bsondump in Copy Files: Vendor/mongodb */,
+				7D2D18291A6D288800B2DD6A /* mongo in Copy Files: Vendor/mongodb */,
+				7D2D182A1A6D288800B2DD6A /* mongod in Copy Files: Vendor/mongodb */,
+				7D2D182B1A6D288800B2DD6A /* mongodump in Copy Files: Vendor/mongodb */,
+				7D2D182C1A6D288800B2DD6A /* mongoexport in Copy Files: Vendor/mongodb */,
+				7D2D182D1A6D288800B2DD6A /* mongofiles in Copy Files: Vendor/mongodb */,
+				7D2D182E1A6D288800B2DD6A /* mongoimport in Copy Files: Vendor/mongodb */,
+				7D2D182F1A6D288800B2DD6A /* mongooplog in Copy Files: Vendor/mongodb */,
+				7D2D18301A6D288800B2DD6A /* mongoperf in Copy Files: Vendor/mongodb */,
+				7D2D18311A6D288800B2DD6A /* mongorestore in Copy Files: Vendor/mongodb */,
+				7D2D18321A6D288800B2DD6A /* mongos in Copy Files: Vendor/mongodb */,
+				7D2D18331A6D288800B2DD6A /* mongosniff in Copy Files: Vendor/mongodb */,
+				7D2D18341A6D288800B2DD6A /* mongostat in Copy Files: Vendor/mongodb */,
+				7D2D18351A6D288800B2DD6A /* mongotop in Copy Files: Vendor/mongodb */,
+				7D2D18361A6D288800B2DD6A /* GNU-AGPL-3.0 in Copy Files: Vendor/mongodb */,
+				7D2D18371A6D288800B2DD6A /* README in Copy Files: Vendor/mongodb */,
+				7D2D18381A6D288800B2DD6A /* THIRD-PARTY-NOTICES in Copy Files: Vendor/mongodb */,
+			);
+			name = "Copy Files: Vendor/mongodb";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7D25A7E21A697586007EC13C /* MongoDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MongoDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D25A7E61A697586007EC13C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,24 +80,24 @@
 		7D25A7F21A697586007EC13C /* MongoDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MongoDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D25A7F71A697586007EC13C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D25A7F81A697586007EC13C /* MongoDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDBTests.swift; sourceTree = "<group>"; };
-		7D25A8021A6975FF007EC13C /* leaf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = leaf.pdf; sourceTree = "<group>"; };
-		7D25A8151A6976D8007EC13C /* bsondump */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = bsondump; sourceTree = "<group>"; };
-		7D25A8161A6976D8007EC13C /* mongo */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongo; sourceTree = "<group>"; };
-		7D25A8171A6976D8007EC13C /* mongod */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongod; sourceTree = "<group>"; };
-		7D25A8181A6976D8007EC13C /* mongodump */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongodump; sourceTree = "<group>"; };
-		7D25A8191A6976D8007EC13C /* mongoexport */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongoexport; sourceTree = "<group>"; };
-		7D25A81A1A6976D8007EC13C /* mongofiles */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongofiles; sourceTree = "<group>"; };
-		7D25A81B1A6976D8007EC13C /* mongoimport */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongoimport; sourceTree = "<group>"; };
-		7D25A81C1A6976D8007EC13C /* mongooplog */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongooplog; sourceTree = "<group>"; };
-		7D25A81D1A6976D8007EC13C /* mongoperf */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongoperf; sourceTree = "<group>"; };
-		7D25A81E1A6976D8007EC13C /* mongorestore */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongorestore; sourceTree = "<group>"; };
-		7D25A81F1A6976D8007EC13C /* mongos */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongos; sourceTree = "<group>"; };
-		7D25A8201A6976D8007EC13C /* mongosniff */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongosniff; sourceTree = "<group>"; };
-		7D25A8211A6976D8007EC13C /* mongostat */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongostat; sourceTree = "<group>"; };
-		7D25A8221A6976D8007EC13C /* mongotop */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongotop; sourceTree = "<group>"; };
-		7D25A8231A6976D8007EC13C /* GNU-AGPL-3.0 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "GNU-AGPL-3.0"; sourceTree = "<group>"; };
-		7D25A8241A6976D8007EC13C /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		7D25A8251A6976D8007EC13C /* THIRD-PARTY-NOTICES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "THIRD-PARTY-NOTICES"; sourceTree = "<group>"; };
+		7D2D18061A6D278300B2DD6A /* bsondump */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = bsondump; sourceTree = "<group>"; };
+		7D2D18071A6D278300B2DD6A /* mongo */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongo; sourceTree = "<group>"; };
+		7D2D18081A6D278300B2DD6A /* mongod */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongod; sourceTree = "<group>"; };
+		7D2D18091A6D278300B2DD6A /* mongodump */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongodump; sourceTree = "<group>"; };
+		7D2D180A1A6D278300B2DD6A /* mongoexport */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongoexport; sourceTree = "<group>"; };
+		7D2D180B1A6D278300B2DD6A /* mongofiles */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongofiles; sourceTree = "<group>"; };
+		7D2D180C1A6D278300B2DD6A /* mongoimport */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongoimport; sourceTree = "<group>"; };
+		7D2D180D1A6D278300B2DD6A /* mongooplog */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongooplog; sourceTree = "<group>"; };
+		7D2D180E1A6D278300B2DD6A /* mongoperf */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongoperf; sourceTree = "<group>"; };
+		7D2D180F1A6D278300B2DD6A /* mongorestore */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongorestore; sourceTree = "<group>"; };
+		7D2D18101A6D278300B2DD6A /* mongos */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongos; sourceTree = "<group>"; };
+		7D2D18111A6D278300B2DD6A /* mongosniff */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongosniff; sourceTree = "<group>"; };
+		7D2D18121A6D278300B2DD6A /* mongostat */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongostat; sourceTree = "<group>"; };
+		7D2D18131A6D278300B2DD6A /* mongotop */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongotop; sourceTree = "<group>"; };
+		7D2D18141A6D278300B2DD6A /* GNU-AGPL-3.0 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "GNU-AGPL-3.0"; sourceTree = "<group>"; };
+		7D2D18151A6D278300B2DD6A /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		7D2D18161A6D278300B2DD6A /* THIRD-PARTY-NOTICES */ = {isa = PBXFileReference; lastKnownFileType = text; path = "THIRD-PARTY-NOTICES"; sourceTree = "<group>"; };
+		7D2D18391A6D2A4100B2DD6A /* leaf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = leaf.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +150,8 @@
 		7D25A7E51A697586007EC13C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7D25A8121A6976D8007EC13C /* Vendor */,
-				7D25A8021A6975FF007EC13C /* leaf.pdf */,
+				7D2D18031A6D278300B2DD6A /* Vendor */,
+				7D2D18391A6D2A4100B2DD6A /* leaf.pdf */,
 				7D25A7E61A697586007EC13C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -144,42 +174,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7D25A8121A6976D8007EC13C /* Vendor */ = {
+		7D2D18031A6D278300B2DD6A /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				7D25A8131A6976D8007EC13C /* mongodb */,
+				7D2D18041A6D278300B2DD6A /* mongodb */,
 			);
 			path = Vendor;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
-		7D25A8131A6976D8007EC13C /* mongodb */ = {
+		7D2D18041A6D278300B2DD6A /* mongodb */ = {
 			isa = PBXGroup;
 			children = (
-				7D25A8141A6976D8007EC13C /* bin */,
-				7D25A8231A6976D8007EC13C /* GNU-AGPL-3.0 */,
-				7D25A8241A6976D8007EC13C /* README */,
-				7D25A8251A6976D8007EC13C /* THIRD-PARTY-NOTICES */,
+				7D2D18051A6D278300B2DD6A /* bin */,
+				7D2D18141A6D278300B2DD6A /* GNU-AGPL-3.0 */,
+				7D2D18151A6D278300B2DD6A /* README */,
+				7D2D18161A6D278300B2DD6A /* THIRD-PARTY-NOTICES */,
 			);
 			path = mongodb;
 			sourceTree = "<group>";
 		};
-		7D25A8141A6976D8007EC13C /* bin */ = {
+		7D2D18051A6D278300B2DD6A /* bin */ = {
 			isa = PBXGroup;
 			children = (
-				7D25A8151A6976D8007EC13C /* bsondump */,
-				7D25A8161A6976D8007EC13C /* mongo */,
-				7D25A8171A6976D8007EC13C /* mongod */,
-				7D25A8181A6976D8007EC13C /* mongodump */,
-				7D25A8191A6976D8007EC13C /* mongoexport */,
-				7D25A81A1A6976D8007EC13C /* mongofiles */,
-				7D25A81B1A6976D8007EC13C /* mongoimport */,
-				7D25A81C1A6976D8007EC13C /* mongooplog */,
-				7D25A81D1A6976D8007EC13C /* mongoperf */,
-				7D25A81E1A6976D8007EC13C /* mongorestore */,
-				7D25A81F1A6976D8007EC13C /* mongos */,
-				7D25A8201A6976D8007EC13C /* mongosniff */,
-				7D25A8211A6976D8007EC13C /* mongostat */,
-				7D25A8221A6976D8007EC13C /* mongotop */,
+				7D2D18061A6D278300B2DD6A /* bsondump */,
+				7D2D18071A6D278300B2DD6A /* mongo */,
+				7D2D18081A6D278300B2DD6A /* mongod */,
+				7D2D18091A6D278300B2DD6A /* mongodump */,
+				7D2D180A1A6D278300B2DD6A /* mongoexport */,
+				7D2D180B1A6D278300B2DD6A /* mongofiles */,
+				7D2D180C1A6D278300B2DD6A /* mongoimport */,
+				7D2D180D1A6D278300B2DD6A /* mongooplog */,
+				7D2D180E1A6D278300B2DD6A /* mongoperf */,
+				7D2D180F1A6D278300B2DD6A /* mongorestore */,
+				7D2D18101A6D278300B2DD6A /* mongos */,
+				7D2D18111A6D278300B2DD6A /* mongosniff */,
+				7D2D18121A6D278300B2DD6A /* mongostat */,
+				7D2D18131A6D278300B2DD6A /* mongotop */,
 			);
 			path = bin;
 			sourceTree = "<group>";
@@ -194,6 +224,7 @@
 				7D25A7DE1A697586007EC13C /* Sources */,
 				7D25A7DF1A697586007EC13C /* Frameworks */,
 				7D25A7E01A697586007EC13C /* Resources */,
+				7D2D18021A6D270400B2DD6A /* Copy Files: Vendor/mongodb */,
 			);
 			buildRules = (
 			);
@@ -270,26 +301,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D25A8261A6976D8007EC13C /* bsondump in Resources */,
-				7D25A8291A6976D8007EC13C /* mongodump in Resources */,
-				7D25A8311A6976D8007EC13C /* mongosniff in Resources */,
-				7D25A8341A6976D8007EC13C /* GNU-AGPL-3.0 in Resources */,
-				7D25A82E1A6976D8007EC13C /* mongoperf in Resources */,
-				7D25A82D1A6976D8007EC13C /* mongooplog in Resources */,
-				7D25A8321A6976D8007EC13C /* mongostat in Resources */,
-				7D25A8331A6976D8007EC13C /* mongotop in Resources */,
-				7D25A82B1A6976D8007EC13C /* mongofiles in Resources */,
-				7D25A82F1A6976D8007EC13C /* mongorestore in Resources */,
 				7D25A7EA1A697586007EC13C /* Images.xcassets in Resources */,
-				7D25A8271A6976D8007EC13C /* mongo in Resources */,
 				7D25A7ED1A697586007EC13C /* MainMenu.xib in Resources */,
-				7D25A8361A6976D8007EC13C /* THIRD-PARTY-NOTICES in Resources */,
-				7D25A82C1A6976D8007EC13C /* mongoimport in Resources */,
-				7D25A8351A6976D8007EC13C /* README in Resources */,
-				7D25A82A1A6976D8007EC13C /* mongoexport in Resources */,
-				7D25A8281A6976D8007EC13C /* mongod in Resources */,
-				7D25A8031A6975FF007EC13C /* leaf.pdf in Resources */,
-				7D25A8301A6976D8007EC13C /* mongos in Resources */,
+				7D2D183A1A6D2A4100B2DD6A /* leaf.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
