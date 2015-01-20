@@ -9,4 +9,5 @@ _Just download, drag to the applications folder, and double-click._
 
 ## Downloads
 
-#### [MongoDB.app](https://github.com/gcollazo/mongodbapp/releases/download/1.0.1/MongoDB.app-v1.0.1.zip) - v1.0.1
+#### [MongoDB.app](https://github.com/gcollazo/mongodbapp/releases/download/1.2.0/MongoDB.zip) - v1.2.0
+[Release notes](https://github.com/gcollazo/mongodbapp/releases/tag/1.2.0)
