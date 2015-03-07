@@ -98,6 +98,7 @@
 		7D2D18151A6D278300B2DD6A /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		7D2D18161A6D278300B2DD6A /* THIRD-PARTY-NOTICES */ = {isa = PBXFileReference; lastKnownFileType = text; path = "THIRD-PARTY-NOTICES"; sourceTree = "<group>"; };
 		7D2D18391A6D2A4100B2DD6A /* leaf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = leaf.pdf; sourceTree = "<group>"; };
+		7DBE349E1AAB5A2100AFBE02 /* MongoDB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MongoDB.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +140,7 @@
 		7D25A7E41A697586007EC13C /* MongoDB */ = {
 			isa = PBXGroup;
 			children = (
+				7DBE349E1AAB5A2100AFBE02 /* MongoDB.entitlements */,
 				7D25A7E71A697586007EC13C /* AppDelegate.swift */,
 				7D25A7E91A697586007EC13C /* Images.xcassets */,
 				7D25A7EB1A697586007EC13C /* MainMenu.xib */,
@@ -267,7 +269,7 @@
 						DevelopmentTeam = FJZ2YT5Y98;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -436,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MongoDB/MongoDB.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MongoDB/Info.plist;
@@ -448,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MongoDB/MongoDB.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MongoDB/Info.plist;

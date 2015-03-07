@@ -59,7 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.task.launchPath = path
         }
         
-        self.task.arguments = ["--dbpath", self.dataPath]
+        self.task.arguments = ["--dbpath", self.dataPath, "--nounixsocket"]
         self.task.standardOutput = self.pipe
         
         println("Run mongod")
