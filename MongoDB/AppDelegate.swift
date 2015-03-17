@@ -25,9 +25,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusBar = NSStatusBar.systemStatusBar()
     var statusBarItem: NSStatusItem = NSStatusItem()
     var menu: NSMenu = NSMenu()
-    var actionMenuItem: NSMenuItem = NSMenuItem()
+    
     var statusMenuItem: NSMenuItem = NSMenuItem()
-    var connectionMenuItem: NSMenuItem = NSMenuItem()
+    var openMongoMenuItem: NSMenuItem = NSMenuItem()
+    var docsMenuItem: NSMenuItem = NSMenuItem()
+    var aboutMenuItem: NSMenuItem = NSMenuItem()
+    var versionMenuItem: NSMenuItem = NSMenuItem()
     var quitMenuItem: NSMenuItem = NSMenuItem()
     
     override init() {
@@ -36,18 +39,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.dataPath = documentsDirectory.stringByAppendingPathComponent("MongoData")
         
         super.init()
-    }
-    
-    func toggleServerState(sender: AnyObject) {
-        if self.task.running {
-            stopServer()
-            self.actionMenuItem.title = "Start Server"
-            self.statusMenuItem.title = "Status: Server not running"
-        } else {
-            startServer()
-            self.actionMenuItem.title = "Stop Server"
-            self.statusMenuItem.title = "Status: Server is running"
-        }
     }
     
     func startServer() {
@@ -64,12 +55,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         println("Run mongod")
         
-        // Send notification
-        var notification = NSUserNotification()
-        notification.title = "MongoDB"
-        notification.subtitle = "Server is running"
-        var center = NSUserNotificationCenter.defaultUserNotificationCenter()
-        center.scheduleNotification(notification)
+        statusMenuItem.title = "Running on Port 27017"
         
         self.task.launch()
     }
@@ -83,13 +69,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let output: String = NSString(data: data, encoding: NSUTF8StringEncoding)!
         println(output)
-        
-        // Send notification
-        var notification = NSUserNotification()
-        notification.title = "MongoDB"
-        notification.subtitle = "Server is not running"
-        var center = NSUserNotificationCenter.defaultUserNotificationCenter()
-        center.scheduleNotification(notification)
+    }
+    
+    func openMongo(sender: AnyObject) {
+        if let path = NSBundle.mainBundle().pathForResource("mongo", ofType: "", inDirectory: "Vendor/mongodb"){
+            let source = "tell application \"Terminal\" to do script \"\(path)\""
+            if let script = NSAppleScript(source: source) {
+                script.executeAndReturnError(nil)
+            }
+        }
+    }
+    
+    func openDocumentationPage(send: AnyObject) {
+        if let url: NSURL = NSURL(string: "https://github.com/gcollazo/mongodbapp") {
+            NSWorkspace.sharedWorkspace().openURL(url)
+        }
     }
     
     func createDataDirectory() {
@@ -114,16 +108,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem.image = icon
         
         // Add actionMenuItem to menu
-        actionMenuItem.title = "Start"
-        actionMenuItem.action = Selector("toggleServerState:")
-        menu.addItem(actionMenuItem)
+        statusMenuItem.title = "Starting..."
+        menu.addItem(statusMenuItem)
+        
+        // Add version to menu
+        if let version = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as String? {
+            versionMenuItem.title = "MongoDB v\(version)"
+            menu.addItem(versionMenuItem)
+        }
         
         // Add separator
         menu.addItem(NSMenuItem.separatorItem())
         
-        // Add statusMenuItem to menu
-        statusMenuItem.title = "Status: Server not running"
-        menu.addItem(statusMenuItem)
+        // Add open mongo to menu
+        openMongoMenuItem.title = "Open mongo"
+        openMongoMenuItem.action = Selector("openMongo:")
+        menu.addItem(openMongoMenuItem)
+        
+        // Add separator
+        menu.addItem(NSMenuItem.separatorItem())
+        
+        // Add about to menu
+        aboutMenuItem.title = "About MongoDB.app"
+        aboutMenuItem.action = Selector("orderFrontStandardAboutPanel:")
+        menu.addItem(aboutMenuItem)
+        
+        // Add docs to menu
+        docsMenuItem.title = "Documentation..."
+        docsMenuItem.action = Selector("openDocumentationPage:")
+        menu.addItem(docsMenuItem)
         
         // Add separator
         menu.addItem(NSMenuItem.separatorItem())
@@ -137,6 +150,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         createDataDirectory()
         setupSystemMenuItem()
+        startServer()
     }
     
     func applicationWillTerminate(aNotification: NSNotification) {
