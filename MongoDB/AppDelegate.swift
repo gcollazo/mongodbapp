@@ -103,7 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem.menu = menu
         
         var icon = NSImage(named: "leaf")
-        icon?.size = NSSize(width: 10, height: 16)
+        icon?.size = NSSize(width: 18, height: 16)
         icon?.setTemplate(true)
         statusBarItem.image = icon
         
@@ -129,7 +129,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem.separatorItem())
         
         // Add about to menu
-        aboutMenuItem.title = "About MongoDB.app"
+        aboutMenuItem.title = "About"
         aboutMenuItem.action = Selector("orderFrontStandardAboutPanel:")
         menu.addItem(aboutMenuItem)
         
