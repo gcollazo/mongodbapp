@@ -105,15 +105,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         icon?.setTemplate(true)
         statusBarItem.image = icon
         
+        // Add version to menu
+        versionMenuItem.title = "MongoDB"
+        if let version = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as String? {
+            versionMenuItem.title = "MongoDB v\(version)"
+        }
+        menu.addItem(versionMenuItem)
+        
         // Add actionMenuItem to menu
         statusMenuItem.title = "Running on Port 27017"
         menu.addItem(statusMenuItem)
-        
-        // Add version to menu
-        if let version = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as String? {
-            versionMenuItem.title = "MongoDB v\(version)"
-            menu.addItem(versionMenuItem)
-        }
         
         // Add separator
         menu.addItem(NSMenuItem.separatorItem())
