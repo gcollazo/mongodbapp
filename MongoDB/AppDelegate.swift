@@ -55,8 +55,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         println("Run mongod")
         
-        statusMenuItem.title = "Running on Port 27017"
-        
         self.task.launch()
     }
     
@@ -108,7 +106,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem.image = icon
         
         // Add actionMenuItem to menu
-        statusMenuItem.title = "Starting..."
+        statusMenuItem.title = "Running on Port 27017"
         menu.addItem(statusMenuItem)
         
         // Add version to menu
@@ -153,10 +151,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         startServer()
     }
     
-    func applicationWillTerminate(aNotification: NSNotification) {
-        if self.task.running {
-            stopServer()
-        }
+    func applicationWillTerminate(notification: NSNotification) {
+        stopServer()
     }
     
 }
