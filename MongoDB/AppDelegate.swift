@@ -65,7 +65,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let data: NSData = self.file.readDataToEndOfFile()
         self.file.closeFile()
         
-        let output: String = NSString(data: data, encoding: NSUTF8StringEncoding)!
+        let output: String = NSString(data: data, encoding: NSUTF8StringEncoding)! as String
         println(output)
     }
     
@@ -107,7 +107,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Add version to menu
         versionMenuItem.title = "MongoDB"
-        if let version = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as String? {
+        if let version = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String? {
             versionMenuItem.title = "MongoDB v\(version)"
         }
         menu.addItem(versionMenuItem)
