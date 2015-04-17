@@ -36,5 +36,7 @@
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
 	<string>https://io-blimp-mongodbapp.s3.amazonaws.com/MongoDBAppcast.xml</string>
+	<key>SUScheduledCheckInterval</key>
+	<integer>86400</integer>
 </dict>
 </plist>
