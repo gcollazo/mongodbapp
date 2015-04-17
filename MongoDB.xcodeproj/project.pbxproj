@@ -27,8 +27,9 @@
 		7D2D18351A6D288800B2DD6A /* mongotop in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18131A6D278300B2DD6A /* mongotop */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7D2D18361A6D288800B2DD6A /* GNU-AGPL-3.0 in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18141A6D278300B2DD6A /* GNU-AGPL-3.0 */; };
 		7D2D18371A6D288800B2DD6A /* README in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18151A6D278300B2DD6A /* README */; };
-		7D2D18381A6D288800B2DD6A /* THIRD-PARTY-NOTICES in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18161A6D278300B2DD6A /* THIRD-PARTY-NOTICES */; };
 		7D2D183A1A6D2A4100B2DD6A /* leaf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7D2D18391A6D2A4100B2DD6A /* leaf.pdf */; };
+		7D516DFE1AE0B7CE005C0D5F /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D516DFF1AE0B830005C0D5F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +65,18 @@
 				7D2D18351A6D288800B2DD6A /* mongotop in Copy Files: Vendor/mongodb */,
 				7D2D18361A6D288800B2DD6A /* GNU-AGPL-3.0 in Copy Files: Vendor/mongodb */,
 				7D2D18371A6D288800B2DD6A /* README in Copy Files: Vendor/mongodb */,
-				7D2D18381A6D288800B2DD6A /* THIRD-PARTY-NOTICES in Copy Files: Vendor/mongodb */,
 			);
 			name = "Copy Files: Vendor/mongodb";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D516DF71AE0B5AD005C0D5F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7D516DFE1AE0B7CE005C0D5F /* Sparkle.framework in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -98,6 +108,8 @@
 		7D2D18151A6D278300B2DD6A /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		7D2D18161A6D278300B2DD6A /* THIRD-PARTY-NOTICES */ = {isa = PBXFileReference; lastKnownFileType = text; path = "THIRD-PARTY-NOTICES"; sourceTree = "<group>"; };
 		7D2D18391A6D2A4100B2DD6A /* leaf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = leaf.pdf; sourceTree = "<group>"; };
+		7D516DF91AE0B672005C0D5F /* MongoDB-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MongoDB-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		7DBE349E1AAB5A2100AFBE02 /* MongoDB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MongoDB.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D516DFF1AE0B830005C0D5F /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				7D25A7E41A697586007EC13C /* MongoDB */,
+				7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */,
 				7D25A7F51A697586007EC13C /* MongoDBTests */,
 				7D25A7E31A697586007EC13C /* Products */,
 			);
@@ -152,6 +166,7 @@
 		7D25A7E51A697586007EC13C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D516DF91AE0B672005C0D5F /* MongoDB-Bridging-Header.h */,
 				7D2D18031A6D278300B2DD6A /* Vendor */,
 				7D2D18391A6D2A4100B2DD6A /* leaf.pdf */,
 				7D25A7E61A697586007EC13C /* Info.plist */,
@@ -227,6 +242,7 @@
 				7D25A7DF1A697586007EC13C /* Frameworks */,
 				7D25A7E01A697586007EC13C /* Resources */,
 				7D2D18021A6D270400B2DD6A /* Copy Files: Vendor/mongodb */,
+				7D516DF71AE0B5AD005C0D5F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -438,13 +454,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Blimp, LLC (FJZ2YT5Y98)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = MongoDB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MongoDB-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -452,13 +477,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Blimp, LLC (FJZ2YT5Y98)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = MongoDB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MongoDB-Bridging-Header.h";
 			};
 			name = Release;
 		};

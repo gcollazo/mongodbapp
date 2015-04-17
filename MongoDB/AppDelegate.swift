@@ -10,6 +10,7 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    @IBOutlet weak var updater: SUUpdater!
     
     var paths = NSSearchPathForDirectoriesInDomains(
         NSSearchPathDirectory.DocumentDirectory,
@@ -32,6 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var aboutMenuItem: NSMenuItem = NSMenuItem()
     var versionMenuItem: NSMenuItem = NSMenuItem()
     var quitMenuItem: NSMenuItem = NSMenuItem()
+    var updatesMenuItem: NSMenuItem = NSMenuItem()
     
     override init() {
         self.file = self.pipe.fileHandleForReading
@@ -95,6 +97,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         println("Mongo data directory: \(self.dataPath)")
     }
     
+    func checkForUpdates(sender: AnyObject?) {
+        println("Checking for updates")
+        self.updater.checkForUpdates(sender)
+    }
+    
     func setupSystemMenuItem() {
         // Add statusBarItem
         statusBarItem = statusBar.statusItemWithLength(-1)
@@ -127,6 +134,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Add separator
         menu.addItem(NSMenuItem.separatorItem())
         
+        // Add check for updates to menu
+        updatesMenuItem.title = "Check for Updates..."
+        updatesMenuItem.action = Selector("checkForUpdates:")
+        menu.addItem(updatesMenuItem)
+
         // Add about to menu
         aboutMenuItem.title = "About"
         aboutMenuItem.action = Selector("orderFrontStandardAboutPanel:")
