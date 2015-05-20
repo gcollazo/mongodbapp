@@ -2,7 +2,7 @@
 
 # Get latest Production Relase version number
 echo "--> Getting Production Release version number"
-VERSION=$(curl -s https://www.mongodb.org/downloads | grep -o 'Production Release (.*)' | grep -o '[0-9]*\.[0-9]*\.[0-9]*')
+VERSION=$(curl -s https://www.mongodb.org/downloads | grep -o 'Current Stable Release (.*)' | grep -o '[0-9]*\.[0-9]*\.[0-9]*')
 echo "--> Production Release: $VERSION"
 
 # Create download url
