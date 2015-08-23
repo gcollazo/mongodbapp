@@ -55,20 +55,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.task.arguments = ["--dbpath", self.dataPath, "--nounixsocket"]
         self.task.standardOutput = self.pipe
         
-        println("Run mongod")
+        print("Run mongod")
         
         self.task.launch()
     }
     
     func stopServer() {
-        println("Terminate mongod")
+        print("Terminate mongod")
         task.terminate()
         
         let data: NSData = self.file.readDataToEndOfFile()
         self.file.closeFile()
         
         let output: String = NSString(data: data, encoding: NSUTF8StringEncoding)! as String
-        println(output)
+        print(output)
     }
     
     func openMongo(sender: AnyObject) {
@@ -87,18 +87,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func createDataDirectory() {
-        println("Create data directory")
-        var error: NSError?
-        
         if (!NSFileManager.defaultManager().fileExistsAtPath(self.dataPath)) {
-            NSFileManager.defaultManager().createDirectoryAtPath(self.dataPath,
-                withIntermediateDirectories: false, attributes: nil, error: &error)
+            do {
+                try NSFileManager.defaultManager().createDirectoryAtPath(self.dataPath,
+                    withIntermediateDirectories: false, attributes: nil)
+            } catch {
+                print("Something went wrong creating data directory")
+            }
         }
-        println("Mongo data directory: \(self.dataPath)")
+        print("Mongo data directory: \(self.dataPath)")
     }
     
     func checkForUpdates(sender: AnyObject?) {
-        println("Checking for updates")
+        print("Checking for updates")
         self.updater.checkForUpdates(sender)
     }
     
@@ -107,9 +108,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem = statusBar.statusItemWithLength(-1)
         statusBarItem.menu = menu
         
-        var icon = NSImage(named: "leaf")
-        icon?.size = NSSize(width: 18, height: 16)
-        icon?.setTemplate(true)
+        let icon = NSImage(named: "leaf")
+        icon!.size = NSSize(width: 18, height: 16)
         statusBarItem.image = icon
         
         // Add version to menu
