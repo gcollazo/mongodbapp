@@ -41,10 +41,11 @@ echo "--> Download completed!"
 
 
 # =========================== PUBLISH ==================================
-BUILD="${VERSION}-build.$(date +%s)"
+BUILD_VERSION="${VERSION}-build.$(date +%s)"
 
-echo "--> Update Info.plist version ${BUILD}"
-/usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${BUILD}" MongoDB/Info.plist
+echo "--> Update Info.plist version ${BUILD_VERSION}"
+/usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${BUILD_VERSION}" MongoDB/Info.plist
+/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${BUILD_VERSION}" MongoDB/Info.plist
 
 echo "--> Clean build folder"
 rm -rf build/
@@ -60,9 +61,6 @@ cd ../../
 # Get zip file size
 FILE_SIZE=$(du ~/Desktop/MongoDB.zip | cut -f1)
 
-# Get app version
-VERSION=$(defaults read ~/Code/mongodbapp/MongoDB/Info.plist CFBundleShortVersionString)
-
 # Get date
 DATE_TIME=$(date +"%a, %d %b %G %H:%M:%S %z")
 
@@ -73,17 +71,17 @@ echo "--> Echo Appcast item"
 echo "============================="
 echo "
 <item>
-  <title>{VERSION TITLE HERE}</title>
+  <title>${BUILD_VERSION}</title>
   <description>
     <![CDATA[
-      <h2>{VERSION TITLE HERE}</h2>
+      <h2>${BUILD_VERSION}</h2>
       <ul>
-        <li>{NEW FEAUTES OR CHANGES}</li>
+        <li>Updates mongodb to ${VERSION}</li>
       </ul>
     ]]>
   </description>
   <pubDate>$DATE_TIME</pubDate>
-  <enclosure url=\"https://github.com/gcollazo/mongodbapp/releases/download/$VERSION/MongoDB.zip\" sparkle:version=\"$VERSION\" length=\"$FILE_SIZE\" type=\"application/octet-stream\"/>
+  <enclosure url=\"https://github.com/gcollazo/mongodbapp/releases/download/$BUILD_VERSION/MongoDB.zip\" sparkle:version=\"$BUILD_VERSION\" length=\"$FILE_SIZE\" type=\"application/octet-stream\"/>
   <sparkle:minimumSystemVersion>10.10</sparkle:minimumSystemVersion>
 </item>
 "
@@ -98,7 +96,7 @@ echo ""
 echo "git push origin --tags"
 echo ""
 echo "Upload the zip file to GitHub"
-echo "https://github.com/gcollazo/mongodbapp/releases/tag/$VERSION"
+echo "https://github.com/gcollazo/mongodbapp/releases/tag/$BUILD_VERSION"
 echo ""
 echo "Update Appcast file."
 echo ""
