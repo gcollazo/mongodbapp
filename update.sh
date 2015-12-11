@@ -64,8 +64,9 @@ FILE_SIZE=$(du ~/Desktop/MongoDB.zip | cut -f1)
 # Get date
 DATE_TIME=$(date +"%a, %d %b %G %H:%M:%S %z")
 
-echo "--> Creting a git tag"
-git tag $VERSION
+echo "--> Creting a git commit and tag"
+git commit -am $BUILD_VERSION
+git tag $BUILD_VERSION
 
 echo "--> Echo Appcast item"
 echo "============================="
