@@ -41,6 +41,10 @@ echo "--> Download completed!"
 
 
 # =========================== PUBLISH ==================================
+BUILD="${VERSION}-build.$(date +%s)"
+
+echo "--> Update Info.plist version ${BUILD}"
+/usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${BUILD}" MongoDB/Info.plist
 
 echo "--> Clean build folder"
 rm -rf build/
