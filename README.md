@@ -9,6 +9,8 @@ _Just download, drag to the applications folder, and double-click._
 
 ### [Download](https://github.com/gcollazo/mongodbapp/releases)
 
+---
+
 ### Version numbers
 
 Version numbers of this project (MongoDB.app) try to communicate the included version of the included MongoDB binaries bundled with each release.
