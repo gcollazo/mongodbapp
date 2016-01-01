@@ -5,8 +5,11 @@ _Just download, drag to the applications folder, and double-click._
 
 ![MongoDB.app Screenshot](screenshot.png)
 
-### [Download](https://github.com/gcollazo/mongodbapp/releases/download/3.0.2-build-4/MongoDB.zip)
-MongoDB.app with MongoDB v3.0.2 - [Release Notes](https://github.com/gcollazo/mongodbapp/releases/tag/3.0.2-build-4)
+### Latest version
+
+![https://img.shields.io/github/release/gcollazo/mongodbapp.svg](Latest version)
+
+### [Download](https://github.com/gcollazo/mongodbapp/releases)
 
 ## Adding mongo binaries to your path
 If you need to add the MongoDB binaries to your path you can do so by adding the following to your `~/.bash_profile`.
