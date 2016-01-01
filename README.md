@@ -7,7 +7,7 @@ _Just download, drag to the applications folder, and double-click._
 
 ![](https://img.shields.io/github/release/gcollazo/mongodbapp.svg)
 
-## [Download](https://github.com/gcollazo/mongodbapp/releases)
+### [Download](https://github.com/gcollazo/mongodbapp/releases)
 
 ### Version numbers
 
