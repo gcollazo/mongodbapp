@@ -109,6 +109,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem.menu = menu
         
         let icon = NSImage(named: "leaf")
+        icon!.template = true
         icon!.size = NSSize(width: 18, height: 16)
         statusBarItem.image = icon
         
