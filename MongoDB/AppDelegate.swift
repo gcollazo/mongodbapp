@@ -72,8 +72,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func openMongo(sender: AnyObject) {
-        if let path = NSBundle.mainBundle().pathForResource("mongo", ofType: "", inDirectory: "Vendor/mongodb"){
-            let source = "tell application \"Terminal\" to do script \"\(path)\""
+        if let path = NSBundle.mainBundle().pathForResource("mongo", ofType: "", inDirectory: "Vendor/mongodb") {
+            var source: String
+            
+            if appExists("iTerm") {
+                source = "tell application \"iTerm\" \n" +
+                            "activate \n" +
+                            "set newTerminal to (make new terminal) \n" +
+                            "tell newTerminal \n" +
+                                "launch session \"Default Session\" \n" +
+                                "tell the last session \n" +
+                                    "write text \"\(path)\" \n" +
+                                "end tell \n" +
+                            "end tell \n" +
+                         "end tell"
+            } else {
+                source = "tell application \"Terminal\" \n" +
+                            "activate \n" +
+                            "do script \"\(path)\" \n" +
+                         "end tell"
+            }
+
             if let script = NSAppleScript(source: source) {
                 script.executeAndReturnError(nil)
             }
@@ -159,6 +178,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(quitMenuItem)
     }
     
+    func appExists(appName: String) -> Bool {
+        let found = [
+            "/Applications/\(appName).app",
+            "/Applications/Utilities/\(appName).app",
+            "\(NSHomeDirectory())/Applications/\(appName).app"
+        ].map {
+            return NSFileManager.defaultManager().fileExistsAtPath($0)
+        }.reduce(false) {
+            if $0 == false && $1 == false {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        return found
+    }
+
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         createDataDirectory()
         setupSystemMenuItem()
