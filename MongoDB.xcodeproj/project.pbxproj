@@ -27,7 +27,6 @@
 		7D2D18351A6D288800B2DD6A /* mongotop in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18131A6D278300B2DD6A /* mongotop */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7D2D18361A6D288800B2DD6A /* GNU-AGPL-3.0 in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18141A6D278300B2DD6A /* GNU-AGPL-3.0 */; };
 		7D2D18371A6D288800B2DD6A /* README in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18151A6D278300B2DD6A /* README */; };
-		7D2D183A1A6D2A4100B2DD6A /* leaf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7D2D18391A6D2A4100B2DD6A /* leaf.pdf */; };
 		7D516DFE1AE0B7CE005C0D5F /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D516DFF1AE0B830005C0D5F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */; };
 /* End PBXBuildFile section */
@@ -107,7 +106,6 @@
 		7D2D18141A6D278300B2DD6A /* GNU-AGPL-3.0 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "GNU-AGPL-3.0"; sourceTree = "<group>"; };
 		7D2D18151A6D278300B2DD6A /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		7D2D18161A6D278300B2DD6A /* THIRD-PARTY-NOTICES */ = {isa = PBXFileReference; lastKnownFileType = text; path = "THIRD-PARTY-NOTICES"; sourceTree = "<group>"; };
-		7D2D18391A6D2A4100B2DD6A /* leaf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = leaf.pdf; sourceTree = "<group>"; };
 		7D516DF91AE0B672005C0D5F /* MongoDB-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MongoDB-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		7DBE349E1AAB5A2100AFBE02 /* MongoDB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MongoDB.entitlements; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 			children = (
 				7D516DF91AE0B672005C0D5F /* MongoDB-Bridging-Header.h */,
 				7D2D18031A6D278300B2DD6A /* Vendor */,
-				7D2D18391A6D2A4100B2DD6A /* leaf.pdf */,
 				7D25A7E61A697586007EC13C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -323,7 +320,6 @@
 			files = (
 				7D25A7EA1A697586007EC13C /* Images.xcassets in Resources */,
 				7D25A7ED1A697586007EC13C /* MainMenu.xib in Resources */,
-				7D2D183A1A6D2A4100B2DD6A /* leaf.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
