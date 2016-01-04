@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var documentsDirectory: AnyObject
     var dataPath: String
+    var logPath: String
     
     var task: NSTask = NSTask()
     var pipe: NSPipe = NSPipe()
@@ -29,6 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var statusMenuItem: NSMenuItem = NSMenuItem()
     var openMongoMenuItem: NSMenuItem = NSMenuItem()
+    var openLogsMenuItem: NSMenuItem = NSMenuItem()
     var docsMenuItem: NSMenuItem = NSMenuItem()
     var aboutMenuItem: NSMenuItem = NSMenuItem()
     var versionMenuItem: NSMenuItem = NSMenuItem()
@@ -39,6 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.file = self.pipe.fileHandleForReading
         self.documentsDirectory = self.paths[0]
         self.dataPath = documentsDirectory.stringByAppendingPathComponent("MongoData")
+        self.logPath = documentsDirectory.stringByAppendingPathComponent("MongoData/Logs")
         
         super.init()
     }
@@ -48,11 +51,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.pipe = NSPipe()
         self.file = self.pipe.fileHandleForReading
         
-        if let path = NSBundle.mainBundle().pathForResource("mongod", ofType: "", inDirectory: "Vendor/mongodb"){
+        if let path = NSBundle.mainBundle().pathForResource("mongod", ofType: "", inDirectory: "Vendor/mongodb") {
             self.task.launchPath = path
         }
         
-        self.task.arguments = ["--dbpath", self.dataPath, "--nounixsocket"]
+        self.task.arguments = ["--dbpath", self.dataPath, "--nounixsocket", "--logpath", "\(self.logPath)/mongo.log"]
         self.task.standardOutput = self.pipe
         
         print("Run mongod")
@@ -105,16 +108,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    func createDataDirectory() {
+    func openLogsDirectory(send: AnyObject) {
+        NSWorkspace.sharedWorkspace().openFile(self.logPath)
+    }
+    
+    func createDirectories() {
         if (!NSFileManager.defaultManager().fileExistsAtPath(self.dataPath)) {
             do {
-                try NSFileManager.defaultManager().createDirectoryAtPath(self.dataPath,
-                    withIntermediateDirectories: false, attributes: nil)
+                try NSFileManager.defaultManager()
+                    .createDirectoryAtPath(self.dataPath, withIntermediateDirectories: false, attributes: nil)
             } catch {
-                print("Something went wrong creating data directory")
+                print("Something went wrong creating dataPath")
             }
         }
+
+        if (!NSFileManager.defaultManager().fileExistsAtPath(self.logPath)) {
+            do {
+                try NSFileManager.defaultManager()
+                    .createDirectoryAtPath(self.logPath, withIntermediateDirectories: false, attributes: nil)
+            } catch {
+                print("Something went wrong creating logPath")
+            }
+        }
+
         print("Mongo data directory: \(self.dataPath)")
+        print("Mongo logs directory: \(self.logPath)")
     }
     
     func checkForUpdates(sender: AnyObject?) {
@@ -151,6 +169,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         openMongoMenuItem.action = Selector("openMongo:")
         menu.addItem(openMongoMenuItem)
         
+        // Add open logs to menu
+        openLogsMenuItem.title = "Open logs directory"
+        openLogsMenuItem.action = Selector("openLogsDirectory:")
+        menu.addItem(openLogsMenuItem)
+
         // Add separator
         menu.addItem(NSMenuItem.separatorItem())
         
@@ -197,7 +220,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        createDataDirectory()
+        createDirectories()
         setupSystemMenuItem()
         startServer()
     }
