@@ -8,7 +8,7 @@ VERSION=$(curl -s https://www.mongodb.org/downloads | grep -o 'Current Stable Re
 echo "--> Production Release: $VERSION"
 
 # Create download url
-DOWNLOAD_URL="https://fastdl.mongodb.org/osx/mongodb-osx-x86_64-$VERSION.tgz"
+DOWNLOAD_URL="http://downloads.mongodb.org/osx/mongodb-osx-ssl-x86_64-$VERSION.tgz"
 
 # Download latest mongodb for mac
 echo "--> Downloading: $DOWNLOAD_URL"
