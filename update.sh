@@ -77,7 +77,7 @@ category: release
 ---
 
 - Updates mongodb to $VERSION
-" > ./_posts/release/$(date +"%y-%m-%d")-${BUILD_VERSION}.md
+" > ./_posts/release/$(date +"%Y-%m-%d")-${BUILD_VERSION}.md
 echo "--> Done"
 echo ""
 
