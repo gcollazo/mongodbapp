@@ -1,3 +1,7 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 40px 10px;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -60,4 +64,23 @@ body {
 
 .section__title {
   border-bottom: 1px solid #e0e0e0;
+}
+
+@media (min-width: 0px) and (max-width: 450px) {
+  .hero__title {
+    font-size: 2em;
+  }
+
+  .hero__icon {
+    max-width: 100%;
+  }
+
+
+  .button {
+    width: 100%;
+  }
+
+  .button--secondary {
+    margin-top: 10px;
+  }
 }
