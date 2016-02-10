@@ -67,6 +67,8 @@ git tag $BUILD_VERSION
 
 echo "--> Create appcast post"
 mkdir -p ./_posts/release/
+rm ./_posts/release/*
+
 echo "---
 version: $BUILD_VERSION
 package_url: https://github.com/gcollazo/mongodbapp/releases/download/$BUILD_VERSION/MongoDB.zip
