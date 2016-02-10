@@ -1,0 +1,8 @@
+name: mongoDB.app
+url: http://gcollazo.github.com/mongodbapp
+description: The easiest way to get started with mongoDB on the Mac
+repoUrl: https://github.com/gcollazo/mongodbapp
+
+exclude:
+  - Gemfile
+  - Gemfile.lock

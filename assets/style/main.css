@@ -1,0 +1,63 @@
+body {
+  margin: 40px 10px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 3.4em;
+  margin: 0;
+}
+
+.hero__subtitle {
+  font-size: 1.4em;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.hero__icon {
+  width: 200px;
+}
+
+.downloads {
+  text-align: center;
+}
+
+.button {
+  background-color: #42c2d4;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  font-size: 1.4em;
+  padding: 15px 30px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #32a9ba;
+}
+
+.button--secondary {
+  color: inherit;
+  background-color: #cbcbcb;
+}
+
+.button--secondary:hover {
+  background-color: #dedede;
+}
+
+.latest-version {
+  color: #8a8a8a;
+}
+
+.wrapper {
+  max-width: 600px;
+  margin: 60px auto 0 auto;
+}
+
+.section__title {
+  border-bottom: 1px solid #e0e0e0;
+}

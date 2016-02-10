@@ -1,0 +1,25 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{site.name}} — {{site.description}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="/assets/style/main.css">
+  </head>
+  <body>
+    <div class="hero">
+      <img src="/assets/img/icon.png" class="hero__icon">
+      <h1 class="hero__title">{{site.name}}</h1>
+      <p class="hero__subtitle">{{site.description}}</p>
+    </div>
+    <!-- /.hero -->
+    <div class="downloads">
+      <a href="{%for release in site.categories.release limit:1 %}{{release.package_url}}{% endfor %}" class="button">Download</a>
+      <a href="{{site.repoUrl}}" class="button button--secondary">GitHub</a>
+      <p class="latest-version">v{%for release in site.categories.release limit:1 %}{{release.version}}{% endfor %}</p>
+    </div>
+    <!-- /.downloads -->
+  </body>
+</html>
