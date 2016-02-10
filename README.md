@@ -3,7 +3,7 @@
 ### The easiest way to get started with MongoDB on the Mac.
 _Just download, drag to the applications folder, and double-click._
 
-![MongoDB.app Screenshot](screenshot.png)
+![MongoDB.app Screenshot](https://raw.githubusercontent.com/gcollazo/mongodbapp/master/screenshot.png)
 
 ![](https://img.shields.io/github/release/gcollazo/mongodbapp.svg)
 
