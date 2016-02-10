@@ -35,7 +35,7 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
-	<string>https://io-blimp-mongodbapp.s3.amazonaws.com/MongoDBAppcast.xml</string>
+	<string>https://gcollazo.github.io/mongodbapp/appcast.xml</string>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
 </dict>
