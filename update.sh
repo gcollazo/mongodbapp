@@ -61,33 +61,21 @@ cd ../../
 # Get zip file size
 FILE_SIZE=$(du ~/Desktop/MongoDB.zip | cut -f1)
 
-# Get date
-DATE_TIME=$(date +"%a, %d %b %G %H:%M:%S %z")
-
 echo "--> Creting a git commit and tag"
 git commit -am $BUILD_VERSION
 git tag $BUILD_VERSION
 
-echo "--> Echo Appcast item"
-echo "============================="
-echo "
-<item>
-  <title>${BUILD_VERSION}</title>
-  <description>
-    <![CDATA[
-      <h2>${BUILD_VERSION}</h2>
-      <ul>
-        <li>Updates mongodb to ${VERSION}</li>
-      </ul>
-    ]]>
-  </description>
-  <pubDate>$DATE_TIME</pubDate>
-  <enclosure url=\"https://github.com/gcollazo/mongodbapp/releases/download/$BUILD_VERSION/MongoDB.zip\" sparkle:version=\"$BUILD_VERSION\" length=\"$FILE_SIZE\" type=\"application/octet-stream\"/>
-  <sparkle:minimumSystemVersion>10.10</sparkle:minimumSystemVersion>
-</item>
-"
-echo "============================="
+echo "--> Create appcast post"
+mkdir -p ./_posts/release/
+echo "---
+version: $BUILD_VERSION
+package_url: https://github.com/gcollazo/mongodbapp/releases/download/$BUILD_VERSION/MongoDB.zip
+package_length: $FILE_SIZE
+category: release
+---
 
+- Updates mongodb to $VERSION
+" > ./_posts/release/$(date +"%y-%m-%d")-${BUILD_VERSION}.md
 echo "--> Done"
 echo ""
 
@@ -99,6 +87,6 @@ echo ""
 echo "Upload the zip file to GitHub"
 echo "https://github.com/gcollazo/mongodbapp/releases/tag/$BUILD_VERSION"
 echo ""
-echo "Update Appcast file."
+echo "Rebuild gh-pages site"
 echo ""
 echo ""
