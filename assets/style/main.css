@@ -7,6 +7,15 @@ body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
+a {
+  color: #32a9ba;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .hero {
   text-align: center;
 }
@@ -37,11 +46,11 @@ body {
   display: inline-block;
   font-size: 1.4em;
   padding: 15px 30px;
-  text-decoration: none;
 }
 
 .button:hover {
   background-color: #32a9ba;
+  text-decoration: none;
 }
 
 .button--secondary {
@@ -53,8 +62,13 @@ body {
   background-color: #dedede;
 }
 
-.latest-version {
+.versions {
   color: #8a8a8a;
+  margin: 0;
+}
+
+.versions--main {
+  margin-top: 20px;
 }
 
 .wrapper {
