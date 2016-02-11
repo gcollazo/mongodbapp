@@ -20,7 +20,7 @@
     <div class="downloads">
       <a href="{%for release in site.categories.release limit:1 %}{{release.package_url}}{% endfor %}" class="button">Download App</a>
       <a href="{{site.repoUrl}}" class="button button--secondary">View on GitHub</a>
-      <p class="latest-version">mongoDB.app contains mongodb v{%for release in site.categories.release limit:1 %}{{release.mongo_version}}{% endfor %} with SSL.</p>
+      <p class="latest-version">mongoDB.app contains mongodb v{%for release in site.categories.release limit:1 %}{{release.mongo_version}}{% endfor %} with SSL</p>
     </div>
     <!-- /.downloads -->
   </body>
