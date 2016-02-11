@@ -1,12 +1,31 @@
 #!/usr/bin/env bash
 
-# =========================== DOWNLOAD ==================================
+echo "--> Getting version numbers"
 
-# Get latest Production Relase version number
-echo "--> Getting Production Release version number"
+# =========================== LAST VERSION INFO ================================
+PREV_VERSION=$(curl -s https://gcollazo.github.io/mongodbapp/ | grep -o 'Latest: v.*' | grep -o '[0-9]*\.[0-9]*\.[0-9]*-build\.[0-9]*')
+
+PREV_MONGO=$(echo $PREV_VERSION | grep -o '^[0-9]*\.[0-9]*\.[0-9]*')
+PREV_BUILD=$(echo $PREV_VERSION | grep -o '[0-9]*$')
+
+echo "--> Previous mongodb version: $PREV_MONGO"
+
+
+# =========================== NEW VERSION INFO =================================
+# Get latest mongodb Production Relase version
 VERSION=$(curl -s https://www.mongodb.org/downloads | grep -o 'Current Stable Release (.*)' | grep -o '[0-9]*\.[0-9]*\.[0-9]*')
-echo "--> Production Release: $VERSION"
+echo "--> Current mongodb version: $VERSION"
 
+
+# =========================== COMPARE VERSIONS =================================
+if [ "$PREV_MONGO" == "$VERSION" ]; then
+  echo "--> No need to update :)"
+  echo "==> Done!"
+  exit 0
+fi
+
+
+# =========================== DOWNLOAD =========================================
 # Create download url
 DOWNLOAD_URL="http://downloads.mongodb.org/osx/mongodb-osx-ssl-x86_64-$VERSION.tgz"
 
@@ -40,7 +59,7 @@ rm -r /tmp/mongodb-osx-x86_64-*
 echo "--> Download completed!"
 
 
-# =========================== PUBLISH ==================================
+# =========================== BUILD ============================================
 BUILD_VERSION="${VERSION}-build.$(date +%s)"
 
 echo "--> Update Info.plist version ${BUILD_VERSION}"
@@ -53,6 +72,10 @@ rm -rf build/
 echo "--> Build with defaults"
 xcodebuild
 
+echo "--> Build completed!"
+
+
+# =========================== RELEASE ==========================================
 echo "--> Zip"
 cd build/Release
 zip -r -y ~/Desktop/MongoDB.zip MongoDB.app
@@ -61,16 +84,13 @@ cd ../../
 # Get zip file size
 FILE_SIZE=$(du ~/Desktop/MongoDB.zip | cut -f1)
 
-echo "--> Creting a git commit and tag"
-git commit -am $BUILD_VERSION
-git tag $BUILD_VERSION
-
-echo "--> Create appcast post"
+echo "--> Create AppCast post"
+rm -r ./_posts/release
 mkdir -p ./_posts/release/
-rm ./_posts/release/*
 
 echo "---
 version: $BUILD_VERSION
+mongo_version: $VERSION
 package_url: https://github.com/gcollazo/mongodbapp/releases/download/$BUILD_VERSION/MongoDB.zip
 package_length: $FILE_SIZE
 category: release
@@ -78,17 +98,22 @@ category: release
 
 - Updates mongodb to $VERSION
 " > ./_posts/release/$(date +"%Y-%m-%d")-${BUILD_VERSION}.md
-echo "--> Done"
-echo ""
 
 
-echo "Next steps:"
+# =========================== PUBLISH ==========================================
 echo ""
+echo "================== Next steps =================="
+echo ""
+echo "git commit -am $BUILD_VERSION"
+echo "git tag $BUILD_VERSION"
 echo "git push origin --tags"
 echo ""
 echo "Upload the zip file to GitHub"
 echo "https://github.com/gcollazo/mongodbapp/releases/tag/$BUILD_VERSION"
 echo ""
-echo "Rebuild gh-pages site"
+echo "git co gh-pages"
+echo "git add ."
+echo "git commit -am 'Release $BUILD_VERSION'"
+echo "git push origin gh-pages"
 echo ""
-echo ""
+echo "==> Done!"
