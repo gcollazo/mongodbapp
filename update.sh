@@ -3,7 +3,7 @@
 echo "--> Getting version numbers"
 
 # =========================== LAST VERSION INFO ================================
-PREV_VERSION=$(curl -s https://gcollazo.github.io/mongodbapp/ | grep -o 'Latest: v.*' | grep -o '[0-9]*\.[0-9]*\.[0-9]*-build\.[0-9]*')
+PREV_VERSION=$(curl -s https://gcollazo.github.io/mongodbapp/ | grep -o '<p class="versions versions--main">v.*' | grep -o '[0-9]*\.[0-9]*\.[0-9]*-build\.[0-9]*')
 
 PREV_MONGO=$(echo $PREV_VERSION | grep -o '^[0-9]*\.[0-9]*\.[0-9]*')
 PREV_BUILD=$(echo $PREV_VERSION | grep -o '[0-9]*$')
