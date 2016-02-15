@@ -3,12 +3,12 @@
 }
 
 body {
-  margin: 40px 10px;
+  /*margin: 40px 10px;*/
   font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
 a {
-  color: #32a9ba;
+  color: #70c6a4;
   text-decoration: none;
 }
 
@@ -18,11 +18,18 @@ a:hover {
 
 .hero {
   text-align: center;
+  background: #a9db80;
+  background: linear-gradient(to bottom, #a9db80 0%,#70c6a4 100%);
+  padding: 50px;
+  color: #357e61;
+  margin-bottom: 30px;
 }
 
 .hero__title {
   font-size: 3.4em;
   margin: 0;
+  color: #fff;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero__subtitle {
@@ -40,7 +47,7 @@ a:hover {
 }
 
 .button {
-  background-color: #42c2d4;
+  background-color: #70c6a4;
   border-radius: 3px;
   color: white;
   display: inline-block;
@@ -49,7 +56,7 @@ a:hover {
 }
 
 .button:hover {
-  background-color: #32a9ba;
+  background-color: #4f9d7e;
   text-decoration: none;
 }
 
