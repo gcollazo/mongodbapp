@@ -9,7 +9,7 @@ fi
 # =========================== CURRENT VERSION INFO =============================
 echo "--> Getting version numbers"
 
-CURR_VERSION=$(curl -s https://gcollazo.github.io/mongodbapp/ | grep -o '<p class="versions versions--main">v.*' | grep -o '[0-9]*\.[0-9]*\.[0-9]*-build\.[0-9]*')
+CURR_VERSION=$(curl -s https://gcollazo.github.io/mongodbapp/ | grep -o '<div class="current-version">v.*' | grep -o '[0-9]*\.[0-9]*\.[0-9]*-build\.[0-9]*')
 
 CURR_MONGO=$(echo $CURR_VERSION | grep -o '^[0-9]*\.[0-9]*\.[0-9]*')
 CURR_BUILD=$(echo $CURR_VERSION | grep -o '[0-9]*$')
