@@ -125,6 +125,10 @@ code {
 }
 
 @media (min-width: 0px) and (max-width: 450px) {
+  .hero {
+    padding: 25px;
+  }
+
   .hero__title {
     font-size: 2em;
   }
@@ -140,5 +144,9 @@ code {
 
   .button--secondary {
     margin-top: 10px;
+  }
+
+  .container {
+    padding: 0 10px;
   }
 }
