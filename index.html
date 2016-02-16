@@ -16,14 +16,39 @@
       <img src="{{site.url}}/assets/img/icon.png" class="hero__icon" width="200" height="200">
       <h1 class="hero__title">{{site.name}}</h1>
       <p class="hero__subtitle">{{site.description}}</p>
+
+      <div class="downloads">
+        <a href="{%for release in site.categories.release limit:1 %}{{release.package_url}}{% endfor %}" class="button">Download App</a>
+        <a href="{{site.repoUrl}}" class="button button--secondary">View on GitHub</a>
+        <p class="versions">
+          v{%for release in site.categories.release limit:1 %}{{release.version}}{% endfor %}<br>
+          mongodb.app contains <a href="https://www.mongodb.org/downloads#production">mongodb</a> v{%for release in site.categories.release limit:1 %}{{release.mongo_version}}{% endfor %} with SSL
+        </p>
+      </div>
+      <!-- /.downloads -->
     </div>
     <!-- /.hero -->
-    <div class="downloads">
-      <a href="{%for release in site.categories.release limit:1 %}{{release.package_url}}{% endfor %}" class="button">Download App</a>
-      <a href="{{site.repoUrl}}" class="button button--secondary">View on GitHub</a>
-      <p class="versions versions--main">v{%for release in site.categories.release limit:1 %}{{release.version}}{% endfor %}</p>
-      <p class="versions">mongodb.app contains <a href="https://www.mongodb.org/downloads#production">mongodb</a> v{%for release in site.categories.release limit:1 %}{{release.mongo_version}}{% endfor %} with SSL</p>
+    <div class="container">
+      <h3>Easy to use</h3>
+      <p>Just download, drag to the applications folder, and double-click.</p>
+      <a href="{{site.url}}/assets/img/screenshot.png" target="_blank">
+        <img src="{{site.url}}/assets/img/screenshot.png" class="img-responsive">
+      </a>
+
+      <h3>Version numbers</h3>
+      <p>Version numbers of this project (mongoDB.app) try to communicate the version of the included mongoDB binaries bundled with each release.</p>
+
+      <p>The version number also includes a build number which is used to indicate the current version of mongoDB.app and it's independent from the bundled mongoDB's version.</p>
+
+      <h3>Adding mongo binaries to your path</h3>
+      <p>If you need to add the mongoDB binaries to your path you can do so by adding the following to your <code>~/.bash_profile</code>.</p>
+
+      <pre>
+        <code>
+# Add mongoDB.app binaries to path
+PATH="/Applications/MongoDB.app/Contents/Resources/Vendor/mongodb:$PATH"</code>
+      </pre>
     </div>
-    <!-- /.downloads -->
+    <!-- /.container -->
   </body>
 </html>

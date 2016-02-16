@@ -5,6 +5,9 @@
 body {
   /*margin: 40px 10px;*/
   font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.2em;
+  color: #606060;
+  line-height: 1.6em;
 }
 
 a {
@@ -14,6 +17,29 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+h3 {
+  color: #000;
+  font-size: 1.3em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 45px;
+}
+
+
+pre {
+  background-color: #f7f7f7;
+  display: block;
+  padding: 5px 20px;
+}
+
+pre code {
+  background-color: #f7f7f7;
+}
+
+code {
+  background-color: rgba(0, 0, 0, 0.04);
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 .hero {
@@ -26,15 +52,14 @@ a:hover {
 }
 
 .hero__title {
-  font-size: 3.4em;
+  font-size: 2.4em;
   margin: 0;
   color: #fff;
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero__subtitle {
-  font-size: 1.4em;
-  max-width: 400px;
+  font-size: 1.2em;
   margin: 20px auto;
 }
 
@@ -42,40 +67,42 @@ a:hover {
   width: 200px;
 }
 
+.hero a {
+  color: white;
+}
+
 .downloads {
+  margin-top: 50px;
   text-align: center;
 }
 
 .button {
-  background-color: #70c6a4;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 3px;
-  color: white;
+  color: #0e6140;
   display: inline-block;
-  font-size: 1.4em;
+  font-size: 1.0em;
   padding: 15px 30px;
 }
 
 .button:hover {
-  background-color: #4f9d7e;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
 }
 
 .button--secondary {
-  color: inherit;
-  background-color: #cbcbcb;
-}
-
-.button--secondary:hover {
-  background-color: #dedede;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .versions {
-  color: #8a8a8a;
-  margin: 0;
-}
-
-.versions--main {
+  font-size: 0.8em;
+  color: rgba(0, 0, 0, 0.4);
   margin-top: 20px;
+  line-height: 1.2em;
 }
 
 .wrapper {
@@ -85,6 +112,16 @@ a:hover {
 
 .section__title {
   border-bottom: 1px solid #e0e0e0;
+}
+
+.container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.img-responsive {
+  width: 100%;
 }
 
 @media (min-width: 0px) and (max-width: 450px) {
