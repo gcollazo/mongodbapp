@@ -11,7 +11,7 @@ body {
 }
 
 a {
-  color: #70c6a4;
+  color: #2a47ad;
   text-decoration: none;
 }
 
@@ -45,9 +45,9 @@ code {
 .hero {
   text-align: center;
   background: #a9db80;
-  background: linear-gradient(to bottom, #a9db80 0%,#70c6a4 100%);
+  background: linear-gradient(to bottom, #2a47ad 0%, #2fc0fe 100%);
   padding: 50px;
-  color: #357e61;
+  color: rgba(0,0,0,0.4);
   margin-bottom: 30px;
 }
 
