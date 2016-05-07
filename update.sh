@@ -19,7 +19,7 @@ echo " -- Current mongodb.app version: $CURR_MONGO"
 
 # =========================== LATEST VERSION INFO ==============================
 # Get latest mongodb Production Relase version
-VERSION=$(curl -s https://www.mongodb.org/downloads | grep -o 'Current Stable Release (.*)' | grep -o '[0-9]*\.[0-9]*\.[0-9]*')
+VERSION=$(curl -s https://www.mongodb.com/download-center | grep -o 'Current Stable Release (.*)</span>' | grep -o '[0-9]*\.[0-9]*\.[0-9]*')
 echo " -- Latest mongodb version: $VERSION"
 
 
