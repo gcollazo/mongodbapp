@@ -23,6 +23,13 @@ If you need to add the mongoDB binaries to your path you can do so by adding the
 PATH="/Applications/MongoDB.app/Contents/Resources/Vendor/mongodb:$PATH"
 ```
 
+Or using the `path_helper` alternative:
+
+```bash
+sudo mkdir -p /etc/paths.d &&
+echo /Applications/MongoDB.app/Contents/Resources/Vendor/mongodb | sudo tee /etc/paths.d/mongodbapp
+```
+
 ### Similar projects
 
 - [Redis.app](https://jpadilla.github.io/redisapp/)
