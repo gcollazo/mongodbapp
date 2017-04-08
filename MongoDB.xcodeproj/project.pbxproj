@@ -22,7 +22,6 @@
 		7D2D18301A6D288800B2DD6A /* mongoperf in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180E1A6D278300B2DD6A /* mongoperf */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7D2D18311A6D288800B2DD6A /* mongorestore in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180F1A6D278300B2DD6A /* mongorestore */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7D2D18321A6D288800B2DD6A /* mongos in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18101A6D278300B2DD6A /* mongos */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D18331A6D288800B2DD6A /* mongosniff in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18111A6D278300B2DD6A /* mongosniff */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7D2D18341A6D288800B2DD6A /* mongostat in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18121A6D278300B2DD6A /* mongostat */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7D2D18351A6D288800B2DD6A /* mongotop in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18131A6D278300B2DD6A /* mongotop */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7D2D18361A6D288800B2DD6A /* GNU-AGPL-3.0 in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18141A6D278300B2DD6A /* GNU-AGPL-3.0 */; };
@@ -59,7 +58,6 @@
 				7D2D18301A6D288800B2DD6A /* mongoperf in Copy Files: Vendor/mongodb */,
 				7D2D18311A6D288800B2DD6A /* mongorestore in Copy Files: Vendor/mongodb */,
 				7D2D18321A6D288800B2DD6A /* mongos in Copy Files: Vendor/mongodb */,
-				7D2D18331A6D288800B2DD6A /* mongosniff in Copy Files: Vendor/mongodb */,
 				7D2D18341A6D288800B2DD6A /* mongostat in Copy Files: Vendor/mongodb */,
 				7D2D18351A6D288800B2DD6A /* mongotop in Copy Files: Vendor/mongodb */,
 				7D2D18361A6D288800B2DD6A /* GNU-AGPL-3.0 in Copy Files: Vendor/mongodb */,
