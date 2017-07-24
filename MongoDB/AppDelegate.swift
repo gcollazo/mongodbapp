@@ -19,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var documentsDirectory: AnyObject
     var dataPath: String
     var logPath: String
+    var bindIp: String
     
     var task: Process = Process()
     var pipe: Pipe = Pipe()
@@ -42,8 +43,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.documentsDirectory = self.paths[0] as AnyObject
         self.dataPath = documentsDirectory.appendingPathComponent("MongoData")
         self.logPath = documentsDirectory.appendingPathComponent("MongoData/Logs")
-        
+        self.bindIp = "127.0.0.1"
         super.init()
+        
+        // Check for ~/.mongodb.conf file and override existing values
+        if self.configurationFileExists(){
+            let configurationOptions = self.configurationFileDefinitions()
+            if let dbPath = configurationOptions["storage.dbPath"]{
+                self.dataPath = dbPath
+            }
+            if let logPath = configurationOptions["systemLog.path"]{
+                self.logPath = logPath
+            }
+            if let bindIp = configurationOptions["net.bindIp"]{
+                self.bindIp = bindIp
+            }
+        }
     }
     
     func startServer() {
@@ -58,8 +73,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.task.arguments = [
             "--dbpath", self.dataPath,
             "--nounixsocket",
-            "--bind_ip",
-            "127.0.0.1",
+            "--bind_ip", self.bindIp,
             "--logpath", "\(self.logPath)/mongo.log"
         ]
         self.task.standardOutput = self.pipe
@@ -137,6 +151,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
 
+        print("Mongo server IP: \(self.bindIp)")
         print("Mongo data directory: \(self.dataPath)")
         print("Mongo logs directory: \(self.logPath)")
     }
@@ -205,6 +220,43 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         quitMenuItem.title = "Quit"
         quitMenuItem.action = #selector(NSApplication.shared().terminate)
         menu.addItem(quitMenuItem)
+    }
+    
+    func configurationFileExists() -> Bool {
+        let configFile = (NSHomeDirectory() + "/.mongodb.conf")
+        let fileManager = FileManager.default
+        return fileManager.fileExists(atPath: configFile)
+    }
+    
+    func configurationFileDefinitions() -> [String:String]{
+        var options = [String:String]()
+        let configFile = (NSHomeDirectory() + "/.mongodb.conf")
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: configFile) {
+            do {
+                let fileContents = try String(contentsOfFile: configFile, encoding: String.Encoding.utf8)
+                var optionPrefix = ""
+                let fileLines = (fileContents.components(separatedBy: NSCharacterSet.newlines).filter{!$0.isEmpty && !$0.hasPrefix("#")})
+                for line in fileLines {
+                    let colonIndex = line.index(of: ":") ?? line.endIndex
+                    var propertyKey = line.substring(to: colonIndex)
+                    
+                    let newOptionGroup = !line.hasPrefix(" ")
+                    if newOptionGroup {
+                        optionPrefix = propertyKey
+                    }
+                    else{
+                        propertyKey = propertyKey.trimmingCharacters(in: NSCharacterSet.whitespaces)
+                        let afterColonIndex = line.index(after: colonIndex)
+                        let key = String("\(optionPrefix).\(propertyKey)")
+                        let value = line.substring(from: afterColonIndex).trimmingCharacters(in: NSCharacterSet.whitespaces).replacingOccurrences(of: "\"", with: "")
+                        options[key!] = value
+                    }
+                }
+            }
+            catch {print("Error reading .mongodb.conf file")}
+        }
+        return options
     }
     
     func appExists(_ appName: String) -> Bool {
