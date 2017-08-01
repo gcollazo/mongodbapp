@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Yaml
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -20,6 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var dataPath: String
     var logPath: String
     var bindIp: String
+    
+    var validConfigurationFileExists = false
     
     var task: Process = Process()
     var pipe: Pipe = Pipe()
@@ -47,16 +50,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         super.init()
         
         // Check for ~/.mongodb.conf file and override existing values
-        if self.configurationFileExists(){
-            let configurationOptions = self.configurationFileDefinitions()
-            if let dbPath = configurationOptions["storage.dbPath"]{
-                self.dataPath = dbPath
+        self.checkForValidConfigurationFile()
+        if self.validConfigurationFileExists{
+            let configurationFileDefinitions = self.configurationFileDefinitions()
+            switch configurationFileDefinitions["storage"]["dbPath"]{
+                case .string(let dbPath): self.dataPath = dbPath
+                default:break
             }
-            if let logPath = configurationOptions["systemLog.path"]{
-                self.logPath = logPath
+            switch configurationFileDefinitions["systemLog"]["path"]{
+                case .string(let logPath): self.logPath = logPath
+                default: break
             }
-            if let bindIp = configurationOptions["net.bindIp"]{
-                self.bindIp = bindIp
+            switch configurationFileDefinitions["net"]["bindIp"]{
+                case .string(let bindIp): self.bindIp = bindIp
+                default: break
             }
         }
     }
@@ -69,13 +76,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let path = Bundle.main.path(forResource: "mongod", ofType: "", inDirectory: "Vendor/mongodb") {
             self.task.launchPath = path
         }
-        
-        self.task.arguments = [
+        var args = [
             "--dbpath", self.dataPath,
             "--nounixsocket",
             "--bind_ip", self.bindIp,
             "--logpath", "\(self.logPath)/mongo.log"
         ]
+        
+        if self.validConfigurationFileExists {
+            args.append("--config")
+            args.append((NSHomeDirectory() + "/.mongodb.conf"))
+        }
+        
+        self.task.arguments = args
         self.task.standardOutput = self.pipe
         
         print("Run mongod")
@@ -222,41 +235,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(quitMenuItem)
     }
     
-    func configurationFileExists() -> Bool {
+    func checkForValidConfigurationFile(){
         let configFile = (NSHomeDirectory() + "/.mongodb.conf")
         let fileManager = FileManager.default
-        return fileManager.fileExists(atPath: configFile)
+        let fileExists = fileManager.fileExists(atPath: configFile)
+        var fileIsValid = true
+        do{
+            let fileContents = try String(contentsOfFile: configFile, encoding: String.Encoding.utf8)
+            do {_ = try Yaml.load(fileContents)}
+            catch { fileIsValid = false }
+        }
+        catch { fileIsValid = false }
+        self.validConfigurationFileExists = fileExists && fileIsValid
     }
     
-    func configurationFileDefinitions() -> [String:String]{
-        var options = [String:String]()
+    func configurationFileDefinitions() -> Yaml{
+        var definitions = try! Yaml.load("")
         let configFile = (NSHomeDirectory() + "/.mongodb.conf")
         let fileManager = FileManager.default
         if fileManager.fileExists(atPath: configFile) {
             do {
                 let fileContents = try String(contentsOfFile: configFile, encoding: String.Encoding.utf8)
-                var optionPrefix = ""
-                let fileLines = (fileContents.components(separatedBy: NSCharacterSet.newlines).filter{!$0.isEmpty && !$0.hasPrefix("#")})
-                for line in fileLines {
-                    let colonIndex = line.index(of: ":") ?? line.endIndex
-                    var propertyKey = line.substring(to: colonIndex)
-                    
-                    let newOptionGroup = !line.hasPrefix(" ")
-                    if newOptionGroup {
-                        optionPrefix = propertyKey
-                    }
-                    else{
-                        propertyKey = propertyKey.trimmingCharacters(in: NSCharacterSet.whitespaces)
-                        let afterColonIndex = line.index(after: colonIndex)
-                        let key = String("\(optionPrefix).\(propertyKey)")
-                        let value = line.substring(from: afterColonIndex).trimmingCharacters(in: NSCharacterSet.whitespaces).replacingOccurrences(of: "\"", with: "")
-                        options[key!] = value
-                    }
-                }
+                do {definitions = try Yaml.load(fileContents)}
+                catch {print("Error parsing .mongodb.conf file")}
             }
             catch {print("Error reading .mongodb.conf file")}
         }
-        return options
+        return definitions
     }
     
     func appExists(_ appName: String) -> Bool {
