@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Yaml
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -19,6 +20,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var documentsDirectory: AnyObject
     var dataPath: String
     var logPath: String
+    var bindIp: String
+    
+    var validConfigurationFileExists = false
     
     var task: Process = Process()
     var pipe: Pipe = Pipe()
@@ -42,8 +46,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.documentsDirectory = self.paths[0] as AnyObject
         self.dataPath = documentsDirectory.appendingPathComponent("MongoData")
         self.logPath = documentsDirectory.appendingPathComponent("MongoData/Logs")
-        
+        self.bindIp = "127.0.0.1"
         super.init()
+        
+        // Check for ~/.mongodb.conf file and override existing values
+        self.checkForValidConfigurationFile()
+        if self.validConfigurationFileExists{
+            let configurationFileDefinitions = self.configurationFileDefinitions()
+            switch configurationFileDefinitions["storage"]["dbPath"]{
+                case .string(let dbPath): self.dataPath = dbPath
+                default:break
+            }
+            switch configurationFileDefinitions["systemLog"]["path"]{
+                case .string(let logPath): self.logPath = logPath
+                default: break
+            }
+            switch configurationFileDefinitions["net"]["bindIp"]{
+                case .string(let bindIp): self.bindIp = bindIp
+                default: break
+            }
+        }
     }
     
     func startServer() {
@@ -54,14 +76,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let path = Bundle.main.path(forResource: "mongod", ofType: "", inDirectory: "Vendor/mongodb") {
             self.task.launchPath = path
         }
-        
-        self.task.arguments = [
+        var args = [
             "--dbpath", self.dataPath,
             "--nounixsocket",
-            "--bind_ip",
-            "127.0.0.1",
+            "--bind_ip", self.bindIp,
             "--logpath", "\(self.logPath)/mongo.log"
         ]
+        
+        if self.validConfigurationFileExists {
+            args.append("--config")
+            args.append((NSHomeDirectory() + "/.mongodb.conf"))
+        }
+        
+        self.task.arguments = args
         self.task.standardOutput = self.pipe
         
         print("Run mongod")
@@ -137,6 +164,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
 
+        print("Mongo server IP: \(self.bindIp)")
         print("Mongo data directory: \(self.dataPath)")
         print("Mongo logs directory: \(self.logPath)")
     }
@@ -205,6 +233,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         quitMenuItem.title = "Quit"
         quitMenuItem.action = #selector(NSApplication.shared().terminate)
         menu.addItem(quitMenuItem)
+    }
+    
+    func checkForValidConfigurationFile(){
+        let configFile = (NSHomeDirectory() + "/.mongodb.conf")
+        let fileManager = FileManager.default
+        let fileExists = fileManager.fileExists(atPath: configFile)
+        var fileIsValid = true
+        do{
+            let fileContents = try String(contentsOfFile: configFile, encoding: String.Encoding.utf8)
+            do {_ = try Yaml.load(fileContents)}
+            catch { fileIsValid = false }
+        }
+        catch { fileIsValid = false }
+        self.validConfigurationFileExists = fileExists && fileIsValid
+    }
+    
+    func configurationFileDefinitions() -> Yaml{
+        var definitions = try! Yaml.load("")
+        let configFile = (NSHomeDirectory() + "/.mongodb.conf")
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: configFile) {
+            do {
+                let fileContents = try String(contentsOfFile: configFile, encoding: String.Encoding.utf8)
+                do {definitions = try Yaml.load(fileContents)}
+                catch {print("Error parsing .mongodb.conf file")}
+            }
+            catch {print("Error reading .mongodb.conf file")}
+        }
+        return definitions
     }
     
     func appExists(_ appName: String) -> Bool {
