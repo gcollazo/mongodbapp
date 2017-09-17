@@ -67,16 +67,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.pipe = Pipe()
         self.file = self.pipe.fileHandleForReading
         
-        if let path = Bundle.main.path(forResource: "mongod", ofType: "", inDirectory: "Vendor/mongodb") {
+        if let path = Bundle.main.path(forResource: "mongod", ofType: "", inDirectory: "Vendor/mongodb/bin") {
             self.task.launchPath = path
         }
         
         self.task.arguments = [
-            "--dbpath", self.dataPath,
+            "--dbpath", "\"\(self.dataPath)\"",
             "--nounixsocket",
             "--bind_ip",
             "127.0.0.1",
-            "--logpath", "\(self.logPath)/mongo.log"
+            "--logpath", "\"\(self.logPath)/mongo.log\""
         ]
         self.task.standardOutput = self.pipe
         
