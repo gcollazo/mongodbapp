@@ -69,11 +69,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         self.task.arguments = [
-            "--dbpath", "\"\(self.dataPath)\"",
+            "--dbpath", "\(self.dataPath)",
             "--nounixsocket",
             "--bind_ip",
             "127.0.0.1",
-            "--logpath", "\"\(self.logPath)/mongo.log\""
+            "--logpath", "\(self.logPath)/mongo.log"
         ]
         self.task.standardOutput = self.pipe
         
