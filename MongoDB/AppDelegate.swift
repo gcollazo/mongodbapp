@@ -15,12 +15,9 @@ public let appName = "MongoDB"
 class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var updater: SUUpdater!
     
-    static var userApplicationSupportDirectory =
-        NSSearchPathForDirectoriesInDomains(
-            FileManager.SearchPathDirectory.applicationSupportDirectory,
-            FileManager.SearchPathDomainMask.userDomainMask, true
-        ).first!
-    
+    static let userApplicationSupportDirectory =
+        try! FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+
     var dataPath: String
     var logPath: String
     
@@ -43,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     override init() {
 
-        let appSupport = URL(fileURLWithPath: AppDelegate.userApplicationSupportDirectory)
+        let appSupport = AppDelegate.userApplicationSupportDirectory
 
         // App version follows mongoDB version. Add it to the directory
         guard let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
