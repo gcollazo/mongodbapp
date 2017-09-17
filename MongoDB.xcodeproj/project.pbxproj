@@ -92,7 +92,9 @@
 				7D25A7F51A697586007EC13C /* MongoDBTests */,
 				7D25A7E31A697586007EC13C /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		7D25A7E31A697586007EC13C /* Products */ = {
 			isa = PBXGroup;
