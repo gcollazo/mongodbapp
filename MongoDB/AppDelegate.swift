@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-public let appName = "MongoDB.app"
+public let appName = "MongoDB"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
