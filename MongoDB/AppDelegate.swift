@@ -9,8 +9,6 @@
 import Foundation
 import Cocoa
 
-public let appName = "MongoDB"
-
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var updater: SUUpdater!
@@ -42,10 +40,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         let appSupport = AppDelegate.userApplicationSupportDirectory
 
-        // App version follows mongoDB version. Add it to the directory
-        guard let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
-            fatalError("Unable to determine application version from Info.plist")
+        guard
+            let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String,
+            let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+        else {
+            fatalError("Unable to determine application name & version from Info.plist")
         }
+        
+        // Add name to Application Support directory, then add the version (which follows mongoDB version).
+        // A versioned directory allows users to use separate versions of the app without worrying about
+        // incompatible data or log file formats.
 
         let dataDirectory = appSupport
             .appendingPathComponent(appName)
