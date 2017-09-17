@@ -6,17 +6,21 @@
 //  Copyright (c) 2015 Giovanni Collazo. All rights reserved.
 //
 
+import Foundation
 import Cocoa
+
+public let appName = "MongoDB.app"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var updater: SUUpdater!
     
-    var paths = NSSearchPathForDirectoriesInDomains(
-        FileManager.SearchPathDirectory.documentDirectory,
-        FileManager.SearchPathDomainMask.userDomainMask, true)
+    static var userApplicationSupportDirectory =
+        NSSearchPathForDirectoriesInDomains(
+            FileManager.SearchPathDirectory.applicationSupportDirectory,
+            FileManager.SearchPathDomainMask.userDomainMask, true
+        ).first!
     
-    var documentsDirectory: AnyObject
     var dataPath: String
     var logPath: String
     
@@ -38,11 +42,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var updatesMenuItem: NSMenuItem = NSMenuItem()
     
     override init() {
+
+        let appSupport = URL(fileURLWithPath: AppDelegate.userApplicationSupportDirectory)
+
+        // App version follows mongoDB version. Add it to the directory
+        guard let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
+            fatalError("Unable to determine application version from Info.plist")
+        }
+
+        let dataDirectory = appSupport
+            .appendingPathComponent(appName)
+            .appendingPathComponent(appVersion)
+
+        self.dataPath = dataDirectory.appendingPathComponent("Data").path
+        self.logPath = dataDirectory.appendingPathComponent("Logs").path
+
         self.file = self.pipe.fileHandleForReading
-        self.documentsDirectory = self.paths[0] as AnyObject
-        self.dataPath = documentsDirectory.appendingPathComponent("MongoData")
-        self.logPath = documentsDirectory.appendingPathComponent("MongoData/Logs")
-        
+
         super.init()
     }
     
@@ -122,18 +138,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if (!FileManager.default.fileExists(atPath: self.dataPath)) {
             do {
                 try FileManager.default
-                    .createDirectory(atPath: self.dataPath, withIntermediateDirectories: false, attributes: nil)
+                    .createDirectory(atPath: self.dataPath, withIntermediateDirectories: true, attributes: nil)
             } catch {
-                print("Something went wrong creating dataPath")
+                print("Something went wrong creating dataPath: \(error)")
             }
         }
 
         if (!FileManager.default.fileExists(atPath: self.logPath)) {
             do {
                 try FileManager.default
-                    .createDirectory(atPath: self.logPath, withIntermediateDirectories: false, attributes: nil)
+                    .createDirectory(atPath: self.logPath, withIntermediateDirectories: true, attributes: nil)
             } catch {
-                print("Something went wrong creating logPath")
+                print("Something went wrong creating logPath: \(error)")
             }
         }
 
