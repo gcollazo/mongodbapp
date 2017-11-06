@@ -6,17 +6,16 @@
 //  Copyright (c) 2015 Giovanni Collazo. All rights reserved.
 //
 
+import Foundation
 import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var updater: SUUpdater!
     
-    var paths = NSSearchPathForDirectoriesInDomains(
-        FileManager.SearchPathDirectory.documentDirectory,
-        FileManager.SearchPathDomainMask.userDomainMask, true)
-    
-    var documentsDirectory: AnyObject
+    static let userApplicationSupportDirectory =
+        try! FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+
     var dataPath: String
     var logPath: String
     
@@ -38,11 +37,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var updatesMenuItem: NSMenuItem = NSMenuItem()
     
     override init() {
-        self.file = self.pipe.fileHandleForReading
-        self.documentsDirectory = self.paths[0] as AnyObject
-        self.dataPath = documentsDirectory.appendingPathComponent("MongoData")
-        self.logPath = documentsDirectory.appendingPathComponent("MongoData/Logs")
+
+        let appSupport = AppDelegate.userApplicationSupportDirectory
+
+        guard
+            let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String,
+            let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+        else {
+            fatalError("Unable to determine application name & version from Info.plist")
+        }
         
+        // Add name to Application Support directory, then add the version (which follows mongoDB version).
+        // A versioned directory allows users to use separate versions of the app without worrying about
+        // incompatible data or log file formats.
+
+        let dataDirectory = appSupport
+            .appendingPathComponent(appName)
+            .appendingPathComponent(appVersion)
+
+        self.dataPath = dataDirectory.appendingPathComponent("Data").path
+        self.logPath = dataDirectory.appendingPathComponent("Logs").path
+
+        self.file = self.pipe.fileHandleForReading
+
         super.init()
     }
     
@@ -51,12 +68,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.pipe = Pipe()
         self.file = self.pipe.fileHandleForReading
         
-        if let path = Bundle.main.path(forResource: "mongod", ofType: "", inDirectory: "Vendor/mongodb") {
+        if let path = Bundle.main.path(forResource: "mongod", ofType: "", inDirectory: "Vendor/mongodb/bin") {
             self.task.launchPath = path
         }
         
         self.task.arguments = [
-            "--dbpath", self.dataPath,
+            "--dbpath", "\(self.dataPath)",
             "--nounixsocket",
             "--bind_ip",
             "127.0.0.1",
@@ -122,18 +139,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if (!FileManager.default.fileExists(atPath: self.dataPath)) {
             do {
                 try FileManager.default
-                    .createDirectory(atPath: self.dataPath, withIntermediateDirectories: false, attributes: nil)
+                    .createDirectory(atPath: self.dataPath, withIntermediateDirectories: true, attributes: nil)
             } catch {
-                print("Something went wrong creating dataPath")
+                print("Something went wrong creating dataPath: \(error)")
             }
         }
 
         if (!FileManager.default.fileExists(atPath: self.logPath)) {
             do {
                 try FileManager.default
-                    .createDirectory(atPath: self.logPath, withIntermediateDirectories: false, attributes: nil)
+                    .createDirectory(atPath: self.logPath, withIntermediateDirectories: true, attributes: nil)
             } catch {
-                print("Something went wrong creating logPath")
+                print("Something went wrong creating logPath: \(error)")
             }
         }
 

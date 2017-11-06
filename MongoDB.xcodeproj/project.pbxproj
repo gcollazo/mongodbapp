@@ -11,23 +11,9 @@
 		7D25A7EA1A697586007EC13C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A7E91A697586007EC13C /* Images.xcassets */; };
 		7D25A7ED1A697586007EC13C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A7EB1A697586007EC13C /* MainMenu.xib */; };
 		7D25A7F91A697586007EC13C /* MongoDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A7F81A697586007EC13C /* MongoDBTests.swift */; };
-		7D2D18281A6D288800B2DD6A /* bsondump in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18061A6D278300B2DD6A /* bsondump */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D18291A6D288800B2DD6A /* mongo in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18071A6D278300B2DD6A /* mongo */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D182A1A6D288800B2DD6A /* mongod in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18081A6D278300B2DD6A /* mongod */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D182B1A6D288800B2DD6A /* mongodump in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18091A6D278300B2DD6A /* mongodump */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D182C1A6D288800B2DD6A /* mongoexport in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180A1A6D278300B2DD6A /* mongoexport */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D182D1A6D288800B2DD6A /* mongofiles in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180B1A6D278300B2DD6A /* mongofiles */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D182E1A6D288800B2DD6A /* mongoimport in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180C1A6D278300B2DD6A /* mongoimport */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D182F1A6D288800B2DD6A /* mongooplog in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180D1A6D278300B2DD6A /* mongooplog */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D18301A6D288800B2DD6A /* mongoperf in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180E1A6D278300B2DD6A /* mongoperf */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D18311A6D288800B2DD6A /* mongorestore in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D180F1A6D278300B2DD6A /* mongorestore */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D18321A6D288800B2DD6A /* mongos in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18101A6D278300B2DD6A /* mongos */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D18341A6D288800B2DD6A /* mongostat in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18121A6D278300B2DD6A /* mongostat */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D18351A6D288800B2DD6A /* mongotop in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18131A6D278300B2DD6A /* mongotop */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		7D2D18361A6D288800B2DD6A /* GNU-AGPL-3.0 in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18141A6D278300B2DD6A /* GNU-AGPL-3.0 */; };
-		7D2D18371A6D288800B2DD6A /* README in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = 7D2D18151A6D278300B2DD6A /* README */; };
 		7D516DFE1AE0B7CE005C0D5F /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D516DFF1AE0B830005C0D5F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */; };
+		AAB9CA961F6EDC5900614682 /* Vendor in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = AAB9CA951F6EDC4500614682 /* Vendor */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,24 +30,10 @@
 		7D2D18021A6D270400B2DD6A /* Copy Files: Vendor/mongodb */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = Vendor/mongodb;
+			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				7D2D18281A6D288800B2DD6A /* bsondump in Copy Files: Vendor/mongodb */,
-				7D2D18291A6D288800B2DD6A /* mongo in Copy Files: Vendor/mongodb */,
-				7D2D182A1A6D288800B2DD6A /* mongod in Copy Files: Vendor/mongodb */,
-				7D2D182B1A6D288800B2DD6A /* mongodump in Copy Files: Vendor/mongodb */,
-				7D2D182C1A6D288800B2DD6A /* mongoexport in Copy Files: Vendor/mongodb */,
-				7D2D182D1A6D288800B2DD6A /* mongofiles in Copy Files: Vendor/mongodb */,
-				7D2D182E1A6D288800B2DD6A /* mongoimport in Copy Files: Vendor/mongodb */,
-				7D2D182F1A6D288800B2DD6A /* mongooplog in Copy Files: Vendor/mongodb */,
-				7D2D18301A6D288800B2DD6A /* mongoperf in Copy Files: Vendor/mongodb */,
-				7D2D18311A6D288800B2DD6A /* mongorestore in Copy Files: Vendor/mongodb */,
-				7D2D18321A6D288800B2DD6A /* mongos in Copy Files: Vendor/mongodb */,
-				7D2D18341A6D288800B2DD6A /* mongostat in Copy Files: Vendor/mongodb */,
-				7D2D18351A6D288800B2DD6A /* mongotop in Copy Files: Vendor/mongodb */,
-				7D2D18361A6D288800B2DD6A /* GNU-AGPL-3.0 in Copy Files: Vendor/mongodb */,
-				7D2D18371A6D288800B2DD6A /* README in Copy Files: Vendor/mongodb */,
+				AAB9CA961F6EDC5900614682 /* Vendor in Copy Files: Vendor/mongodb */,
 			);
 			name = "Copy Files: Vendor/mongodb";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,26 +59,10 @@
 		7D25A7F21A697586007EC13C /* MongoDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MongoDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D25A7F71A697586007EC13C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D25A7F81A697586007EC13C /* MongoDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDBTests.swift; sourceTree = "<group>"; };
-		7D2D18061A6D278300B2DD6A /* bsondump */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = bsondump; sourceTree = "<group>"; };
-		7D2D18071A6D278300B2DD6A /* mongo */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongo; sourceTree = "<group>"; };
-		7D2D18081A6D278300B2DD6A /* mongod */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongod; sourceTree = "<group>"; };
-		7D2D18091A6D278300B2DD6A /* mongodump */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongodump; sourceTree = "<group>"; };
-		7D2D180A1A6D278300B2DD6A /* mongoexport */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongoexport; sourceTree = "<group>"; };
-		7D2D180B1A6D278300B2DD6A /* mongofiles */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongofiles; sourceTree = "<group>"; };
-		7D2D180C1A6D278300B2DD6A /* mongoimport */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongoimport; sourceTree = "<group>"; };
-		7D2D180D1A6D278300B2DD6A /* mongooplog */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongooplog; sourceTree = "<group>"; };
-		7D2D180E1A6D278300B2DD6A /* mongoperf */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongoperf; sourceTree = "<group>"; };
-		7D2D180F1A6D278300B2DD6A /* mongorestore */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongorestore; sourceTree = "<group>"; };
-		7D2D18101A6D278300B2DD6A /* mongos */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongos; sourceTree = "<group>"; };
-		7D2D18111A6D278300B2DD6A /* mongosniff */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongosniff; sourceTree = "<group>"; };
-		7D2D18121A6D278300B2DD6A /* mongostat */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongostat; sourceTree = "<group>"; };
-		7D2D18131A6D278300B2DD6A /* mongotop */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mongotop; sourceTree = "<group>"; };
-		7D2D18141A6D278300B2DD6A /* GNU-AGPL-3.0 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "GNU-AGPL-3.0"; sourceTree = "<group>"; };
-		7D2D18151A6D278300B2DD6A /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		7D2D18161A6D278300B2DD6A /* THIRD-PARTY-NOTICES */ = {isa = PBXFileReference; lastKnownFileType = text; path = "THIRD-PARTY-NOTICES"; sourceTree = "<group>"; };
 		7D516DF91AE0B672005C0D5F /* MongoDB-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MongoDB-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		7DBE349E1AAB5A2100AFBE02 /* MongoDB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MongoDB.entitlements; sourceTree = "<group>"; };
+		AAB9CA951F6EDC4500614682 /* Vendor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Vendor; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +92,9 @@
 				7D25A7F51A697586007EC13C /* MongoDBTests */,
 				7D25A7E31A697586007EC13C /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		7D25A7E31A697586007EC13C /* Products */ = {
 			isa = PBXGroup;
@@ -162,8 +120,8 @@
 		7D25A7E51A697586007EC13C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AAB9CA951F6EDC4500614682 /* Vendor */,
 				7D516DF91AE0B672005C0D5F /* MongoDB-Bridging-Header.h */,
-				7D2D18031A6D278300B2DD6A /* Vendor */,
 				7D25A7E61A697586007EC13C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -184,46 +142,6 @@
 				7D25A7F71A697586007EC13C /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7D2D18031A6D278300B2DD6A /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				7D2D18041A6D278300B2DD6A /* mongodb */,
-			);
-			path = Vendor;
-			sourceTree = SOURCE_ROOT;
-		};
-		7D2D18041A6D278300B2DD6A /* mongodb */ = {
-			isa = PBXGroup;
-			children = (
-				7D2D18051A6D278300B2DD6A /* bin */,
-				7D2D18141A6D278300B2DD6A /* GNU-AGPL-3.0 */,
-				7D2D18151A6D278300B2DD6A /* README */,
-				7D2D18161A6D278300B2DD6A /* THIRD-PARTY-NOTICES */,
-			);
-			path = mongodb;
-			sourceTree = "<group>";
-		};
-		7D2D18051A6D278300B2DD6A /* bin */ = {
-			isa = PBXGroup;
-			children = (
-				7D2D18061A6D278300B2DD6A /* bsondump */,
-				7D2D18071A6D278300B2DD6A /* mongo */,
-				7D2D18081A6D278300B2DD6A /* mongod */,
-				7D2D18091A6D278300B2DD6A /* mongodump */,
-				7D2D180A1A6D278300B2DD6A /* mongoexport */,
-				7D2D180B1A6D278300B2DD6A /* mongofiles */,
-				7D2D180C1A6D278300B2DD6A /* mongoimport */,
-				7D2D180D1A6D278300B2DD6A /* mongooplog */,
-				7D2D180E1A6D278300B2DD6A /* mongoperf */,
-				7D2D180F1A6D278300B2DD6A /* mongorestore */,
-				7D2D18101A6D278300B2DD6A /* mongos */,
-				7D2D18111A6D278300B2DD6A /* mongosniff */,
-				7D2D18121A6D278300B2DD6A /* mongostat */,
-				7D2D18131A6D278300B2DD6A /* mongotop */,
-			);
-			path = bin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,8 +197,8 @@
 				TargetAttributes = {
 					7D25A7E11A697586007EC13C = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = FJZ2YT5Y98;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -461,9 +379,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Blimp, LLC (FJZ2YT5Y98)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -476,6 +395,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.blimp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MongoDB-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -487,9 +407,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application: Blimp, LLC (FJZ2YT5Y98)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -502,6 +423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.blimp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MongoDB-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
