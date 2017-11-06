@@ -96,20 +96,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func openMongo(_ sender: AnyObject) {
-        if let path = Bundle.main.path(forResource: "mongo", ofType: "", inDirectory: "Vendor/mongodb") {
+        if let path = Bundle.main.path(forResource: "mongo", ofType: "", inDirectory: "Vendor/mongodb/bin") {
             var source: String
             
             if appExists("iTerm") {
                 source = "tell application \"iTerm\" \n" +
                             "activate \n" +
-                            "set newTerminal to (make new terminal) \n" +
-                            "tell newTerminal \n" +
-                                "launch session \"Default Session\" \n" +
-                                "tell the last session \n" +
-                                    "write text \"\(path)\" \n" +
-                                "end tell \n" +
+                            "create window with default profile \n" +
+                            "tell current session of current window \n" +
+                                "write text \"\(path)\" \n" +
                             "end tell \n" +
-                         "end tell"
+                        "end tell"
             } else {
                 source = "tell application \"Terminal\" \n" +
                             "activate \n" +
