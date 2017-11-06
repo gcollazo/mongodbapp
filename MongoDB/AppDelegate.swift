@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var pipe: Pipe = Pipe()
     var file: FileHandle
     
-    var statusBar = NSStatusBar.system()
+    var statusBar = NSStatusBar.system
     var statusBarItem: NSStatusItem = NSStatusItem()
     var menu: NSMenu = NSMenu()
     
@@ -41,8 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let appSupport = AppDelegate.userApplicationSupportDirectory
 
         guard
-            let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String,
-            let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+            let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String
         else {
             fatalError("Unable to determine application name & version from Info.plist")
         }
@@ -53,7 +52,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         let dataDirectory = appSupport
             .appendingPathComponent(appName)
-            .appendingPathComponent(appVersion)
 
         self.dataPath = dataDirectory.appendingPathComponent("Data").path
         self.logPath = dataDirectory.appendingPathComponent("Logs").path
@@ -97,7 +95,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         print(output)
     }
     
-    func openMongo(_ sender: AnyObject) {
+    @objc func openMongo(_ sender: AnyObject) {
         if let path = Bundle.main.path(forResource: "mongo", ofType: "", inDirectory: "Vendor/mongodb") {
             var source: String
             
@@ -125,14 +123,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    func openDocumentationPage(_ send: AnyObject) {
+    @objc func openDocumentationPage(_ send: AnyObject) {
         if let url: URL = URL(string: "https://github.com/gcollazo/mongodbapp") {
-            NSWorkspace.shared().open(url)
+            NSWorkspace.shared.open(url)
         }
     }
     
-    func openLogsDirectory(_ send: AnyObject) {
-        NSWorkspace.shared().openFile(self.logPath)
+    @objc func openLogsDirectory(_ send: AnyObject) {
+        NSWorkspace.shared.openFile(self.logPath)
     }
     
     func createDirectories() {
@@ -158,7 +156,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         print("Mongo logs directory: \(self.logPath)")
     }
     
-    func checkForUpdates(_ sender: AnyObject?) {
+    @objc func checkForUpdates(_ sender: AnyObject?) {
         print("Checking for updates")
         self.updater.checkForUpdates(sender)
     }
@@ -168,7 +166,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem = statusBar.statusItem(withLength: -1)
         statusBarItem.menu = menu
         
-        let icon = NSImage(named: "leaf")
+        let icon = NSImage(named: NSImage.Name(rawValue: "leaf"))
         icon!.isTemplate = true
         icon!.size = NSSize(width: 18, height: 16)
         statusBarItem.image = icon
@@ -220,7 +218,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Add quitMenuItem to menu
         quitMenuItem.title = "Quit"
-        quitMenuItem.action = #selector(NSApplication.shared().terminate)
+        quitMenuItem.action = #selector(NSApplication.shared.terminate)
         menu.addItem(quitMenuItem)
     }
     
