@@ -11,8 +11,8 @@
 		7D25A7EA1A697586007EC13C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A7E91A697586007EC13C /* Images.xcassets */; };
 		7D25A7ED1A697586007EC13C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A7EB1A697586007EC13C /* MainMenu.xib */; };
 		7D25A7F91A697586007EC13C /* MongoDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A7F81A697586007EC13C /* MongoDBTests.swift */; };
-		7D516DFE1AE0B7CE005C0D5F /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7D516DFF1AE0B830005C0D5F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */; };
+		7DB90EDC204581C2003F9E93 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB90EDB204581C2003F9E93 /* Sparkle.framework */; };
+		7DB90EDD2045820C003F9E93 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DB90EDB204581C2003F9E93 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AAB9CA961F6EDC5900614682 /* Vendor in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = AAB9CA951F6EDC4500614682 /* Vendor */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +44,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7D516DFE1AE0B7CE005C0D5F /* Sparkle.framework in CopyFiles */,
+				7DB90EDD2045820C003F9E93 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +60,7 @@
 		7D25A7F71A697586007EC13C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D25A7F81A697586007EC13C /* MongoDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDBTests.swift; sourceTree = "<group>"; };
 		7D516DF91AE0B672005C0D5F /* MongoDB-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MongoDB-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
+		7DB90EDB204581C2003F9E93 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		7DBE349E1AAB5A2100AFBE02 /* MongoDB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MongoDB.entitlements; sourceTree = "<group>"; };
 		AAB9CA951F6EDC4500614682 /* Vendor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Vendor; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D516DFF1AE0B830005C0D5F /* Sparkle.framework in Frameworks */,
+				7DB90EDC204581C2003F9E93 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,8 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				7D25A7E41A697586007EC13C /* MongoDB */,
-				7D516DFC1AE0B7C0005C0D5F /* Sparkle.framework */,
 				7D25A7F51A697586007EC13C /* MongoDBTests */,
+				7DB90EDA20458192003F9E93 /* Frameworks */,
 				7D25A7E31A697586007EC13C /* Products */,
 			);
 			indentWidth = 4;
@@ -142,6 +142,14 @@
 				7D25A7F71A697586007EC13C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DB90EDA20458192003F9E93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DB90EDB204581C2003F9E93 /* Sparkle.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,7 +410,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = MongoDB/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.blimp.$(PRODUCT_NAME:rfc1034identifier)";
@@ -431,7 +439,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = MongoDB/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.blimp.$(PRODUCT_NAME:rfc1034identifier)";
