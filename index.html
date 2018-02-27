@@ -18,7 +18,7 @@
       <p class="hero__subtitle">{{site.description}}</p>
 
       <div class="downloads">
-        <a href="{%for release in site.categories.release limit:1 %}{{release.package_url}}{% endfor %}" class="button">Download App</a>
+        <a href="{%for release in site.categories.release limit:1 %}{{release.package_url}}{% endfor %}" class="button">Download</a>
         <a href="{{site.repoUrl}}" class="button button--secondary">View on GitHub</a>
         <div class="versions">
           <div class="current-version">v{%for release in site.categories.release limit:1 %}{{release.version}}{% endfor %}</div>
