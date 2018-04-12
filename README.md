@@ -1,6 +1,7 @@
 # mongoDB.app
 
 ### The easiest way to get started with mongoDB on the Mac.
+
 _Just download, drag to the applications folder, and double-click._
 
 ![mongoDB.app Screenshot](https://gcollazo.github.io/mongodbapp/assets/img/screenshot.png)
@@ -16,11 +17,12 @@ Version numbers of this project (mongoDB.app) try to communicate the included ve
 The version number also includes a build number which is used to indicate the current version of mongoDB.app and it's independent from the bundled mongoDB's version.
 
 ### Adding mongo binaries to your path
+
 If you need to add the mongoDB binaries to your path you can do so by adding the following to your `~/.bash_profile`.
 
 ```bash
 # Add mongoDB.app binaries to path
-PATH="/Applications/MongoDB.app/Contents/Resources/Vendor/mongodb/bin:$PATH"
+export PATH="/Applications/MongoDB.app/Contents/Resources/Vendor/mongodb/bin:$PATH"
 ```
 
 Or using the `path_helper` alternative:
@@ -32,4 +34,4 @@ echo /Applications/MongoDB.app/Contents/Resources/Vendor/mongodb/bin | sudo tee 
 
 ### Similar projects
 
-- [Redis.app](https://jpadilla.github.io/redisapp/)
+* [Redis.app](https://jpadilla.github.io/redisapp/)
