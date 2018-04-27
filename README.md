@@ -43,3 +43,4 @@ $ brew cask install mongodb
 ### Similar projects
 
 * [Redis.app](https://jpadilla.github.io/redisapp/)
+* [RabbitMQ.app](https://jpadilla.github.io/rabbitmqapp/)
