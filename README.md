@@ -32,6 +32,15 @@ sudo mkdir -p /etc/paths.d &&
 echo /Applications/MongoDB.app/Contents/Resources/Vendor/mongodb/bin | sudo tee /etc/paths.d/mongodbapp
 ```
 
+### Installing with Homebrew Cask
+
+You can also install MongoDB.app with [Homebrew Cask](http://caskroom.io/).
+
+```bash
+$ brew cask install mongodb
+```
+
 ### Similar projects
 
 * [Redis.app](https://jpadilla.github.io/redisapp/)
+* [RabbitMQ.app](https://jpadilla.github.io/rabbitmqapp/)
