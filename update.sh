@@ -19,7 +19,9 @@ echo " -- Current mongodb.app version: $CURR_MONGO"
 
 # =========================== LATEST VERSION INFO ==============================
 # Get latest mongodb Production Relase version
-VERSION=$(curl -s https://www.mongodb.com/download-center | grep -o 'Current Stable Release (.*)</span>' | grep -o '[0-9]*\.[0-9]*\.[0-9]*')
+VERSION=$(curl -s https://www.mongodb.com/download-center/v2/community | \
+  grep -o '<option value="1" selected>.* (current release)</option>' | \
+  grep -o '[0-9]*\.[0-9]*\.[0-9]*')
 echo " -- Latest mongodb version: $VERSION"
 
 
@@ -33,7 +35,7 @@ fi
 
 # =========================== DOWNLOAD =========================================
 echo '--> Download'
-DOWNLOAD_URL="http://downloads.mongodb.org/osx/mongodb-osx-ssl-x86_64-$VERSION.tgz"
+DOWNLOAD_URL="https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-$VERSION.tgz"
 
 # Download latest mongodb for mac
 echo " -- Downloading: $DOWNLOAD_URL"
