@@ -20,10 +20,9 @@ echo " -- Current mongodb.app version: $CURR_MONGO"
 # =========================== LATEST VERSION INFO ==============================
 # Get latest mongodb Production Relase version
 VERSION=$(curl -s https://www.mongodb.com/download-center/community | \
-  grep -o '<option value="0" selected>.* (current release)</option>' | \
+  grep -o '<option value="1" selected>.* (current release)</option>' | \
   grep -o '[0-9]*\.[0-9]*\.[0-9]*')
 echo " -- Latest mongodb version: $VERSION"
-
 
 # =========================== COMPARE VERSIONS =================================
 if [ "$FORCE" != true ] && [ "$CURR_MONGO" == "$VERSION" ]; then
