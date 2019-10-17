@@ -54,14 +54,14 @@ tar xvzf /tmp/mongodb.tgz -C /tmp
 
 # move files
 echo " -- Moving files to $(pwd)/Vendor/mongodb/"
-mv /tmp/mongodb-osx-x86_64-*/* Vendor/mongodb
+mv /tmp/mongodb-macos-x86_64-*/* Vendor/mongodb
 
 # cleanup
 echo " -- Removing /tmp/mongodb.tgz"
 rm /tmp/mongodb.tgz
 
-echo " -- Removing /tmp/mongodb-osx-x86_64-*"
-rm -r /tmp/mongodb-osx-x86_64-*
+echo " -- Removing /tmp/mongodb-macos-x86_64-*"
+rm -r /tmp/mongodb-macos-x86_64-*
 
 echo " -- Download completed!"
 
