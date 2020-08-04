@@ -37,7 +37,7 @@ echo /Applications/MongoDB.app/Contents/Resources/Vendor/mongodb/bin | sudo tee 
 You can also install MongoDB.app with [Homebrew Cask](http://caskroom.io/).
 
 ```bash
-$ brew cask install mongodb
+$ brew cask install gcollazo-mongodb
 ```
 
 ### Similar projects
