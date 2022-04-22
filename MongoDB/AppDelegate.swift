@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import Sparkle
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
