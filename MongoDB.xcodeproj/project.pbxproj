@@ -194,6 +194,7 @@
 				TargetAttributes = {
 					7D25A7E11A697586007EC13C = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = FJZ2YT5Y98;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -403,7 +404,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = AS32ZWF56D;
+				DEVELOPMENT_TEAM = FJZ2YT5Y98;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,7 +431,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = AS32ZWF56D;
+				DEVELOPMENT_TEAM = FJZ2YT5Y98;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
