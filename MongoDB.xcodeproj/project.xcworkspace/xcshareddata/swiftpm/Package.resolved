@@ -3,10 +3,10 @@
     {
       "identity" : "sparkle",
       "kind" : "remoteSourceControl",
-      "location" : "git@github.com:sparkle-project/Sparkle.git",
+      "location" : "https://github.com/sparkle-project/Sparkle",
       "state" : {
-        "revision" : "059ce9128775d5a636c7f4716f71a58919d3111e",
-        "version" : "2.2.1"
+        "branch" : "2.x",
+        "revision" : "dc2e1ff5346763106abb6bf6f81b1e804133f97b"
       }
     }
   ],
