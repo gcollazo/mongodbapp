@@ -12,7 +12,7 @@ import Sparkle
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    @IBOutlet weak var updater: SUUpdater!
+    @IBOutlet weak var updater: SPUStandardUpdaterController!
     
     static let userApplicationSupportDirectory =
         try! FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
