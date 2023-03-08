@@ -36,6 +36,8 @@
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
 	<string>https://gcollazo.github.io/mongodbapp/appcast.xml</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>use iTerm/Terminal to open mongsh</string>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
 </dict>

@@ -97,27 +97,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func openMongo(_ sender: AnyObject) {
-        if let path = Bundle.main.path(forResource: "mongo", ofType: "", inDirectory: "Vendor/mongodb/bin") {
-            var source: String
-            
-            if appExists("iTerm") {
-                source = "tell application \"iTerm\" \n" +
-                            "activate \n" +
-                            "create window with default profile \n" +
-                            "tell current session of current window \n" +
-                                "write text \"\(path)\" \n" +
-                            "end tell \n" +
-                        "end tell"
-            } else {
-                source = "tell application \"Terminal\" \n" +
-                            "activate \n" +
-                            "do script \"\(path)\" \n" +
-                         "end tell"
-            }
+        let path = "mongosh"
+        var source: String
+        if appExists("iTerm") {
+            source = """
+                        tell application "iTerm"
+                            activate
+                                create window with default profile
+                                tell current session of current window
+                                    write text "\(path)"
+                            end tell
+                        end tell
+                        """
+        } else {
+            source = """
+                        tell application "Terminal"
+                            activate
+                            do script "\(path)"
+                        end tell
+                        """
+        }
 
-            if let script = NSAppleScript(source: source) {
-                script.executeAndReturnError(nil)
-            }
+        if let script = NSAppleScript(source: source) {
+            var error: NSDictionary?
+            script.executeAndReturnError(&error)
+            print(error ?? "success launch mongosh")
         }
     }
     
