@@ -96,31 +96,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         print(output)
     }
     
-    @objc func openMongo(_ sender: AnyObject) {
-        if let path = Bundle.main.path(forResource: "mongo", ofType: "", inDirectory: "Vendor/mongodb/bin") {
-            var source: String
-            
-            if appExists("iTerm") {
-                source = "tell application \"iTerm\" \n" +
-                            "activate \n" +
-                            "create window with default profile \n" +
-                            "tell current session of current window \n" +
-                                "write text \"\(path)\" \n" +
-                            "end tell \n" +
-                        "end tell"
-            } else {
-                source = "tell application \"Terminal\" \n" +
-                            "activate \n" +
-                            "do script \"\(path)\" \n" +
-                         "end tell"
-            }
-
-            if let script = NSAppleScript(source: source) {
-                script.executeAndReturnError(nil)
-            }
-        }
-    }
-    
     @objc func openDocumentationPage(_ send: AnyObject) {
         if let url: URL = URL(string: "https://github.com/gcollazo/mongodbapp") {
             NSWorkspace.shared.open(url)
@@ -167,7 +142,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let icon = NSImage(named: "leaf")
         icon!.isTemplate = true
         icon!.size = NSSize(width: 18, height: 16)
-        statusBarItem.image = icon
+        statusBarItem.button?.image = icon
         
         // Add version to menu
         versionMenuItem.title = "MongoDB"
@@ -182,11 +157,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Add separator
         menu.addItem(NSMenuItem.separator())
-        
-        // Add open mongo to menu
-        openMongoMenuItem.title = "Open mongo"
-        openMongoMenuItem.action = #selector(AppDelegate.openMongo(_:))
-        menu.addItem(openMongoMenuItem)
         
         // Add open logs to menu
         openLogsMenuItem.title = "Open logs directory"
@@ -218,24 +188,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         quitMenuItem.title = "Quit"
         quitMenuItem.action = #selector(NSApplication.shared.terminate)
         menu.addItem(quitMenuItem)
-    }
-    
-    func appExists(_ appName: String) -> Bool {
-        let found = [
-            "/Applications/\(appName).app",
-            "/Applications/Utilities/\(appName).app",
-            "\(NSHomeDirectory())/Applications/\(appName).app"
-        ].map {
-            return FileManager.default.fileExists(atPath: $0)
-        }.reduce(false) {
-            if $0 == false && $1 == false {
-                return false;
-            } else {
-                return true;
-            }
-        }
-
-        return found
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
