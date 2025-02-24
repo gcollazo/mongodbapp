@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E0EA03B288BF9550087D89B /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 5E0EA03A288BF9550087D89B /* Sparkle */; };
 		7D25A7E81A697586007EC13C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A7E71A697586007EC13C /* AppDelegate.swift */; };
 		7D25A7EA1A697586007EC13C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A7E91A697586007EC13C /* Images.xcassets */; };
 		7D25A7ED1A697586007EC13C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D25A7EB1A697586007EC13C /* MainMenu.xib */; };
 		7D25A7F91A697586007EC13C /* MongoDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D25A7F81A697586007EC13C /* MongoDBTests.swift */; };
-		7D75EF2128A4290D00516513 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 7D75EF2028A4290D00516513 /* Sparkle */; };
+		7D31FE5F2D6D104100F1CD08 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D31FE5D2D6D103E00F1CD08 /* Sparkle.framework */; };
+		7D31FE602D6D104100F1CD08 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D31FE5D2D6D103E00F1CD08 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AAB9CA961F6EDC5900614682 /* Vendor in Copy Files: Vendor/mongodb */ = {isa = PBXBuildFile; fileRef = AAB9CA951F6EDC4500614682 /* Vendor */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +44,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7D31FE602D6D104100F1CD08 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +59,7 @@
 		7D25A7F21A697586007EC13C /* MongoDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MongoDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D25A7F71A697586007EC13C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D25A7F81A697586007EC13C /* MongoDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDBTests.swift; sourceTree = "<group>"; };
+		7D31FE5D2D6D103E00F1CD08 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		7DBE349E1AAB5A2100AFBE02 /* MongoDB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MongoDB.entitlements; sourceTree = "<group>"; };
 		AAB9CA951F6EDC4500614682 /* Vendor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Vendor; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -67,8 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E0EA03B288BF9550087D89B /* Sparkle in Frameworks */,
-				7D75EF2128A4290D00516513 /* Sparkle in Frameworks */,
+				7D31FE5F2D6D104100F1CD08 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +89,7 @@
 				7D25A7E41A697586007EC13C /* MongoDB */,
 				7D25A7F51A697586007EC13C /* MongoDBTests */,
 				7D25A7E31A697586007EC13C /* Products */,
+				7D31FE5D2D6D103E00F1CD08 /* Sparkle.framework */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -159,8 +161,6 @@
 			);
 			name = MongoDB;
 			packageProductDependencies = (
-				5E0EA03A288BF9550087D89B /* Sparkle */,
-				7D75EF2028A4290D00516513 /* Sparkle */,
 			);
 			productName = MongoDB;
 			productReference = 7D25A7E21A697586007EC13C /* MongoDB.app */;
@@ -223,8 +223,6 @@
 			);
 			mainGroup = 7D25A7D91A697586007EC13C;
 			packageReferences = (
-				5E0EA039288BF9550087D89B /* XCRemoteSwiftPackageReference "Sparkle" */,
-				7D75EF1F28A4290D00516513 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = 7D25A7E31A697586007EC13C /* Products */;
 			projectDirPath = "";
@@ -530,38 +528,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5E0EA039288BF9550087D89B /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:sparkle-project/Sparkle.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		7D75EF1F28A4290D00516513 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				branch = 2.x;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5E0EA03A288BF9550087D89B /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5E0EA039288BF9550087D89B /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
-		};
-		7D75EF2028A4290D00516513 /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7D75EF1F28A4290D00516513 /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D25A7DA1A697586007EC13C /* Project object */;
 }

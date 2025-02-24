@@ -103,7 +103,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func openLogsDirectory(_ send: AnyObject) {
-        NSWorkspace.shared.openFile(self.logPath)
+        let logURL = URL(fileURLWithPath: self.logPath)
+        NSWorkspace.shared.open(logURL)
     }
     
     func createDirectories() {

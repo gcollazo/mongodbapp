@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -ef -o pipefail
+
 
 # =========================== CHECK FORCE FLAG =================================
 if [ "$1" == "--force" ]; then
@@ -35,7 +37,7 @@ fi
 
 # =========================== DOWNLOAD =========================================
 echo '--> Download'
-DOWNLOAD_URL="https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-$VERSION.tgz"
+DOWNLOAD_URL="https://fastdl.mongodb.org/osx/mongodb-macos-arm64-$VERSION.tgz"
 
 # Download latest mongodb for mac
 echo " -- Downloading: $DOWNLOAD_URL"
@@ -47,7 +49,7 @@ rm -rf "$(pwd)/Vendor/mongodb"
 
 # Create dir
 echo " -- Creating directory $(pwd)/Vendor/mongodb"
-mkdir -p "$(pwd)/Vendor/mongodb"
+mkdir -p "$(pwd)/Vendor"
 
 # Extract
 echo " -- Unzipping..."
@@ -55,14 +57,11 @@ tar xvzf /tmp/mongodb.tgz -C /tmp
 
 # move files
 echo " -- Moving files to $(pwd)/Vendor/mongodb/"
-mv /tmp/mongodb-macos-x86_64-*/* Vendor/mongodb
+mv "/tmp/mongodb-macos-aarch64-$VERSION/" "$(pwd)/Vendor/mongodb"
 
 # cleanup
 echo " -- Removing /tmp/mongodb.tgz"
 rm /tmp/mongodb.tgz
-
-echo " -- Removing /tmp/mongodb-macos-x86_64-*"
-rm -r /tmp/mongodb-macos-x86_64-*
 
 echo " -- Download completed!"
 
